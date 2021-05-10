@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login Livraria BG</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/styleLogin.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container">
+            <form action="#">
+                <img class="imagem" src="~/Imagens/Logo_Livraria.png" />
+                <input type="text" placeholder="Login" />
+                <input type="password" placeholder="Senha" />
+                <a href="#">Esqueci minha senha</a>
+                <a class="corbtn btn" href="/Home/Index" type="submit" name="btnEnviar" value="Login" role="button">
+                    <span>ENTRAR</span>
+                </a>
+            </form>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+
+        $(document).ready(function () {
+            $(".navbar-toggle").click(function () {
+                $(".sidebar").toggleClass("sidebar-open");
+            })
+        });
+
+    </script>
+
+</body>
+</html>
