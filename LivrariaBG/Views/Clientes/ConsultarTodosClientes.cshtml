@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Dominios.Cliente>
+
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Consultar Clientes</span>
+                </li>
+            </ul>
+            <a class="btn btn-outline-primary" href="/Clientes/cadastrar" role="button">
+                <span class="fas fa-user-plus" title="Cadastro" aria-hidden="true"></span>
+                <span>Cadastrar Cliente</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="list-home" class="row">
+            <div class="col-4">
+                <h1>Lista de Clientes</h1>
+
+            </div>
+        </div>
+        <div class="table-responsive">
+
+            <table class="table table-striped table-hover table-sm">
+
+                <thead class="thead-dark">
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>CEP</th>
+                        <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>Complemento</th>
+                        <th>Cidade</th>
+                        <th>UF</th>
+                        <th>Email</th>
+                        <th>Senha</th>
+                        <th>Situação</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cliente in Model)
+                    {
+                        <tr>
+                            <td>@cliente.login_id_cli</td>
+                            <td>@cliente.nome_cli</td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.cpf_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+
+                            <td>@cliente.cep_cli</td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.endereco_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.bairro_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.complemento_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.cidade_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+
+                            <td>@cliente.uf_id_est</td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.email_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                        data-toggle="popover" data-placement="top"
+                                        data-content="@cliente.senha_cli">
+                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                                </button>
+                            </td>
+                            <td>Ativo</td>
+                            <td colspan="2">
+                                <a class="btn btn-info btn-sm" href="/Clientes/cadastrar" role="button">
+                                    <span class="fas fa-edit" title="Editar" aria-hidden="true"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+
