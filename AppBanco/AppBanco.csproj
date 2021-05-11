@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dominios\Dominios.csproj">
+      <Project>{9eb9ed5d-0553-4d4e-b9a4-f76ac0430df4}</Project>
+      <Name>Dominios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModeloDLL\ModeloDLL.csproj">
+      <Project>{f02f29f8-3f5f-4f14-af0d-e95be05b0ea1}</Project>
+      <Name>ModeloDLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
