@@ -19,7 +19,6 @@ namespace ModeloDLL
                 "values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}');",
                     cliente.login_id_cli, cliente.senha_cli, cliente.nome_cli, cliente.cpf_cli, cliente.telefone_cli, cliente.endereco_cli,
                     cliente.complemento_cli, cliente.email_cli, cliente.bairro_cli, cliente.cidade_cli, cliente.uf_id_est, cliente.cep_cli);
-
             db.ExecutaComando(strInsert);
         }
         public void Update(Cliente cliente)
