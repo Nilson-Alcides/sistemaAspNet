@@ -17,6 +17,36 @@ namespace LivrariaBG.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult Cadastrar(Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoCliente = new ClienteDAO();
+                metodoCliente.Insert(cliente);
+                RedirectToAction("ConsultarTodosClientes");
+            }
+            return View(cliente);
+
+        }
+        public ActionResult Create()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                var metodoCliente = new ClienteDAO();
+                metodoCliente.Insert(cliente);
+                RedirectToAction("ConsultarTodosClientes");
+            }
+            return View(cliente);
+
+        }
+
         public ActionResult ConsultarTodosClientes()
         {
             var metodoCliente = new ClienteDAO();

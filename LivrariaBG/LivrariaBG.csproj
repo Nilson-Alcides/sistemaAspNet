@@ -238,6 +238,7 @@
     <Content Include="Views\Funcionarios\Cadastrar.cshtml" />
     <Content Include="Views\Clientes\ConsultarTodosClientes.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
