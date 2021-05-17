@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDLL", "ModeloDLL\Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBanco", "AppBanco\AppBanco.csproj", "{10F9A41E-15F0-4F85-AD0D-198348F48C41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp_Teste", "WebApp_Teste\WebApp_Teste.csproj", "{D460CCA7-1146-4140-8D5E-1769B89E6C5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{10F9A41E-15F0-4F85-AD0D-198348F48C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10F9A41E-15F0-4F85-AD0D-198348F48C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10F9A41E-15F0-4F85-AD0D-198348F48C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D460CCA7-1146-4140-8D5E-1769B89E6C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D460CCA7-1146-4140-8D5E-1769B89E6C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D460CCA7-1146-4140-8D5E-1769B89E6C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D460CCA7-1146-4140-8D5E-1769B89E6C5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

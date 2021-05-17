@@ -48,11 +48,20 @@ namespace LivrariaBG.Controllers
             return View(cliente);
 
         }
-
+        //Seleciona Todos Cliente 
         public ActionResult ConsultarTodosClientes()
         {
             var metodoCliente = new ClienteDAO();
             return View(SelecionaCliente(metodoCliente.Select()));
+        }
+
+        //Seleciona Cliente por ID
+        [HttpPost]
+        public ActionResult ConsultarClientesId(int idCliente)
+        {
+            var metodoClienteId = new ClienteDAO();
+            return View(SelecionaCliente(metodoClienteId.SelectId(idCliente)).FirstOrDefault());
+
         }
         private List<Cliente> SelecionaCliente(MySqlDataReader retorno)
         {
@@ -62,18 +71,14 @@ namespace LivrariaBG.Controllers
             {
                 var TempCliente = new Cliente()
                 {
-                    login_id_cli = retorno["login_id_cli"].ToString(),
-                    nome_cli = retorno["nome_cli"].ToString(),
-                    cpf_cli = retorno["cpf_cli"].ToString(),
-                    senha_cli = retorno["senha_cli"].ToString(),
-                    telefone_cli = retorno["telefone_cli"].ToString(),
-                    email_cli = retorno["email_cli"].ToString(),
-                    endereco_cli = retorno["endereco_cli"].ToString(),
-                    complemento_cli = retorno["complemento_cli"].ToString(),
-                    bairro_cli = retorno["bairro_cli"].ToString(),
-                    cidade_cli = retorno["cidade_cli"].ToString(),
-                    uf_id_est = retorno["uf_id_est"].ToString(),
-                    cep_cli = retorno["cep_cli"].ToString()
+                    idCliente = int.Parse(retorno["idCliente"].ToString()),
+                    nomeCliente = retorno["nomeCliente"].ToString(),
+                    cpfCliente = retorno["cpfCliente"].ToString(),
+                    emailCliente = retorno["emailCliente"].ToString(),
+                    sexoCliente = retorno["sexoCliente"].ToString(),
+                    dataNascCliente = DateTime.Parse(retorno["dataNascCliente"].ToString()),
+                    statusCliente = retorno["statusCliente"].ToString(),
+
                 };
                 clientes.Add(TempCliente);
             }
@@ -106,5 +111,7 @@ namespace LivrariaBG.Controllers
             retorno.Close();
             return usuarios;
         }
+
+        
     }
-}
+ }

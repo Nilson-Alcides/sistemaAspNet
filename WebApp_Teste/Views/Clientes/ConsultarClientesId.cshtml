@@ -1,0 +1,80 @@
+﻿@model Dominios.Cliente
+
+@{
+    ViewBag.Title = "ConsultarClientesId";
+}
+
+<h2>ConsultarClientesId</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpfCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpfCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexoCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexoCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataNascCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataNascCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.statusCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.statusCliente)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -36,7 +36,7 @@ namespace Dominios
         [Required(ErrorMessage = "O sexo é obrigatorio")]
         public string sexoCliente { get; set; }
 
-        [Display(Name = "Data Nascimento")]
+        [Display(Name = "Nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Informe a data de nascimento")]
         public DateTime dataNascCliente { get; set; }

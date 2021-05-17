@@ -96,14 +96,14 @@
                         <a class="btn btn-info btn-sm" href="/Clientes/cadastrar" role="button">
                             <span class="fas fa-edit" title="Editar" aria-hidden="true"></span>
                         </a>
-                        <a class="btn btn-info btn-sm" href="/Clientes/detalhes/@cliente.idCliente" role="button">
+                        <a class="btn btn-info btn-sm" href="/Clientes/ConsultarClientesId/@cliente.idCliente" role="button">
                             <span class="fas fa-edit" title="Detalhes" aria-hidden="true"></span>
 
                             @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                             @Html.ActionLink("Details", "ConsultarClientesId", new { id = cliente.idCliente }) |
                             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                         </a>
-                        <a href="@Url.Action("detalhes", "detalhes", new { id = cliente.idCliente })">Editar</a>
+                        <span><a href="@Url.Action("detalhes", "ConsultarClientesId",  new { id = cliente.idCliente })">Detalhes</a></span>
 </tr>
                         }
                 </tbody>

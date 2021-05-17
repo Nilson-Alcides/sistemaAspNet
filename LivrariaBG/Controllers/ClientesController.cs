@@ -48,11 +48,20 @@ namespace LivrariaBG.Controllers
             return View(cliente);
 
         }
-
+        //Seleciona Todos Cliente 
         public ActionResult ConsultarTodosClientes()
         {
             var metodoCliente = new ClienteDAO();
             return View(SelecionaCliente(metodoCliente.Select()));
+        }
+
+        //Seleciona Cliente por ID
+        [HttpPost]
+        public ActionResult ConsultarClientesId(int idCliente)
+        {
+            var metodoClienteId = new ClienteDAO();
+            return View(SelecionaCliente(metodoClienteId.SelectId(idCliente)).FirstOrDefault());
+
         }
         private List<Cliente> SelecionaCliente(MySqlDataReader retorno)
         {
@@ -82,6 +91,13 @@ namespace LivrariaBG.Controllers
             var metodoUsuario = new UsuarioDAO();
             return View(SelecionaUsiario(metodoUsuario.Select()));
         }
+        //Deletar cliente
+        public ActionResult Deletar(int id)
+        {
+            var metodoUsuario = new UsuarioDAO();
+            return View(SelecionaUsiario(metodoUsuario.Select()));
+        }
+
 
         private List<Usuario> SelecionaUsiario(MySqlDataReader retorno)
         {
@@ -103,12 +119,8 @@ namespace LivrariaBG.Controllers
             return usuarios;
         }
 
-        [HttpPost]
-        public ActionResult ConsultarClientesId(int idCliente)
-        {
-            var metodoClienteId = new ClienteDAO();
-            return View(SelecionaCliente(metodoClienteId.SelectId(idCliente)).FirstOrDefault());
+        
 
-        }
+
     }
  }

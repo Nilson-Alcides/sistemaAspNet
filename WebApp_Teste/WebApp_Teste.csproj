@@ -8,17 +8,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9843A548-C032-4985-8F5A-0622BF230276}</ProjectGuid>
+    <ProjectGuid>{D460CCA7-1146-4140-8D5E-1769B89E6C5D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LivrariaBG</RootNamespace>
-    <AssemblyName>LivrariaBG</AssemblyName>
+    <RootNamespace>WebApp_Teste</RootNamespace>
+    <AssemblyName>WebApp_Teste</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44356</IISExpressSSLPort>
+    <IISExpressSSLPort>44370</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -124,95 +124,42 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
-    <Compile Include="Controllers\GerenciamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MeusDadosController.cs" />
-    <Compile Include="Controllers\ProdutosController.cs" />
-    <Compile Include="Controllers\RelatoriosController.cs" />
-    <Compile Include="Controllers\VendasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Views\Clientes\detalhes.cshtml" />
-    <Content Include="Views\Clientes\List.cshtml" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\styleLogin.css" />
-    <Content Include="Content\webjars.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Imagens\Logo_Livraria.png" />
-    <Content Include="lib\font-awesome\css\all.css" />
-    <Content Include="lib\font-awesome\css\all.min.css" />
-    <Content Include="lib\font-awesome\css\brands.css" />
-    <Content Include="lib\font-awesome\css\brands.min.css" />
-    <Content Include="lib\font-awesome\css\fontawesome.css" />
-    <Content Include="lib\font-awesome\css\fontawesome.min.css" />
-    <Content Include="lib\font-awesome\css\regular.css" />
-    <Content Include="lib\font-awesome\css\regular.min.css" />
-    <Content Include="lib\font-awesome\css\solid.css" />
-    <Content Include="lib\font-awesome\css\solid.min.css" />
-    <Content Include="lib\font-awesome\css\svg-with-js.css" />
-    <Content Include="lib\font-awesome\css\svg-with-js.min.css" />
-    <Content Include="lib\font-awesome\css\v4-shims.css" />
-    <Content Include="lib\font-awesome\css\v4-shims.min.css" />
-    <Content Include="lib\font-awesome\js\all.js" />
-    <Content Include="lib\font-awesome\js\all.min.js" />
-    <Content Include="lib\font-awesome\js\brands.js" />
-    <Content Include="lib\font-awesome\js\brands.min.js" />
-    <Content Include="lib\font-awesome\js\conflict-detection.js" />
-    <Content Include="lib\font-awesome\js\conflict-detection.min.js" />
-    <Content Include="lib\font-awesome\js\fontawesome.js" />
-    <Content Include="lib\font-awesome\js\fontawesome.min.js" />
-    <Content Include="lib\font-awesome\js\regular.js" />
-    <Content Include="lib\font-awesome\js\regular.min.js" />
-    <Content Include="lib\font-awesome\js\solid.js" />
-    <Content Include="lib\font-awesome\js\solid.min.js" />
-    <Content Include="lib\font-awesome\js\v4-shims.js" />
-    <Content Include="lib\font-awesome\js\v4-shims.min.js" />
-    <Content Include="lib\font-awesome\sprites\brands.svg" />
-    <Content Include="lib\font-awesome\sprites\regular.svg" />
-    <Content Include="lib\font-awesome\sprites\solid.svg" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.svg" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.svg" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="libman.json" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.eot" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.eot" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.eot" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-mask.js" />
-    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\js-bootstrap.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -226,24 +173,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Vendas\RealizarVenda.cshtml" />
-    <Content Include="Views\Vendas\Consultar.cshtml" />
-    <Content Include="Views\Gerenciamento\Retirada.cshtml" />
     <Content Include="Views\Clientes\Cadastrar.cshtml" />
-    <Content Include="Views\Clientes\Consultar.cshtml" />
-    <Content Include="Views\Produtos\Cadastrar.cshtml" />
-    <Content Include="Views\Produtos\Consultar.cshtml" />
-    <Content Include="Views\Relatorios\Vendas.cshtml" />
-    <Content Include="Views\Relatorios\Clientes.cshtml" />
-    <Content Include="Views\Relatorios\ProdutoEstoque.cshtml" />
-    <Content Include="Views\Funcionarios\Cadastrar.cshtml" />
-    <Content Include="Views\Funcionarios\create.cshtml" />
-    <Content Include="Views\Funcionarios\Funcionarios.cshtml" />
-    <Content Include="Views\MeusDados\MeusDados.cshtml" />
     <Content Include="Views\Clientes\ConsultarTodosClientes.cshtml" />
     <Content Include="Views\Clientes\ConsultarClientesId.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Clientes\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,9 +220,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51466</DevelopmentServerPort>
+          <DevelopmentServerPort>50765</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44356/</IISUrl>
+          <IISUrl>https://localhost:44370/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

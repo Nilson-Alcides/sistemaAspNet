@@ -42,10 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cliente.cs.old" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
-    <None Include="Funcionario.cs.old" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
