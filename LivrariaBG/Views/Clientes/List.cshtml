@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Dominios.Cliente>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpfCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexoCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataNascCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statusCliente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpfCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexoCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataNascCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.statusCliente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -20,10 +20,10 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
 
-                        @Html.LabelFor(model => model.nomeCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.nome_cli, htmlAttributes: new { @class = "control-label col-md-2" })
 
-                        @Html.EditorFor(model => model.nomeCliente, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.nomeCliente, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.nome_cli, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nome_cli, "", new { @class = "text-danger" })
 
                         @*@Html.LabelFor(model => model.login_id_cli, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.login_id_cli, new { htmlAttributes = new { @class = "form-control" } })
@@ -34,10 +34,10 @@
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        @Html.LabelFor(model => model.cpfCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.cpf_cli, htmlAttributes: new { @class = "control-label col-md-2" })
 
-                        @Html.EditorFor(model => model.cpfCliente, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.cpfCliente, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.cpf_cli, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cpf_cli, "", new { @class = "text-danger" })
                         <div class="invalid-feedback">
 
                         </div>
@@ -47,20 +47,20 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
 
-                        @Html.LabelFor(model => model.emailCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.telefone_cli, htmlAttributes: new { @class = "control-label col-md-2" })
 
-                        @Html.EditorFor(model => model.emailCliente, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.emailCliente, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.telefone_cli, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.telefone_cli, "", new { @class = "text-danger" })
 
                         <div class="invalid-feedback">
 
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        @Html.LabelFor(model => model.sexoCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.email_cli, htmlAttributes: new { @class = "control-label col-md-2" })
 
-                        @Html.EditorFor(model => model.sexoCliente, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.sexoCliente, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.email_cli, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email_cli, "", new { @class = "text-danger" })
                         <div class="invalid-feedback">
 
                         </div>
@@ -70,26 +70,26 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        @Html.LabelFor(model => model.dataNascCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.endereco_cli, htmlAttributes: new { @class = "control-label col-md-2" })
                         <
-                        @Html.EditorFor(model => model.dataNascCliente, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.dataNascCliente, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.endereco_cli, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.endereco_cli, "", new { @class = "text-danger" })
                         <div class="invalid-feedback">
 
                         </div>
                     </div>
 
                     <div class="form-group col-md-6">
-                        @Html.LabelFor(model => model.statusCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.complemento_cli, htmlAttributes: new { @class = "control-label col-md-2" })
 
-                        @Html.EditorFor(model => model.statusCliente, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.statusCliente, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.complemento_cli, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.complemento_cli, "", new { @class = "text-danger" })
                         <div class="invalid-feedback">
 
                         </div>
                     </div>
 
-                @*</div>
+                </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -141,7 +141,7 @@
 
                         </div>
                     </div>*@
-                @*</div>
+                </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -162,7 +162,7 @@
                         <div class="invalid-feedback">
 
                         </div>
-                    </div>*@
+                    </div>
 
                 </div>
 

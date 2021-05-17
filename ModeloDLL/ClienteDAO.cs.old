@@ -12,16 +12,16 @@ namespace ModeloDLL
     public class ClienteDAO
     {
         private Banco db = new Banco();
-        //INSERIR CLINETE
+
         public void Insert(Cliente cliente)
         {
             try
             {
-                string strInsert = string.Format("INSERT INTO CLIENTE(nomeCliente, cpfCliente, emailCliente, sexoCliente," +
-                    "dataNascCliente, statusCliente) " +
-                   " values('{0}','{1}','{2}','{3}','{4}','{5}');",
-                       cliente.nomeCliente, cliente.cpfCliente, cliente.emailCliente, cliente.sexoCliente,
-                       String.Format("{0:u}",cliente.dataNascCliente), cliente.statusCliente);
+                string strInsert = string.Format("insert into cliente(login_id_cli, senha_cli, nome_cli, cpf_cli, telefone_cli, endereco_cli," +
+                   " complemento_cli, email_cli, bairro_cli, cidade_cli, uf_id_est, cep_cli) " +
+                   " values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}');",
+                       cliente.login_id_cli, cliente.senha_cli, cliente.nome_cli, cliente.cpf_cli, cliente.telefone_cli, cliente.endereco_cli,
+                       cliente.complemento_cli, cliente.email_cli, cliente.bairro_cli, cliente.cidade_cli, cliente.uf_id_est, cliente.cep_cli);
                 db.ExecutaComando(strInsert);
 
             }
@@ -36,18 +36,16 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em cadastro cliente" + ex.Message);
             }
         }
-        //ATUALIZAR CLIENTE
         public void Update(Cliente cliente)
         {
             try
             {
                 string strInsert = "update tbUsusrio set ";
-                strInsert += string.Format("nomeCliente = '{0}',", cliente.nomeCliente);
-                strInsert += string.Format("cpfCliente = '{0}',", cliente.cpfCliente);
-                strInsert += string.Format("emailCliente = '{0}',", cliente.emailCliente);
-                strInsert += string.Format("sexoCliente = '{0}',", cliente.sexoCliente);
-                strInsert += string.Format("dataNascCliente = '{0}',", cliente.dataNascCliente);
-                strInsert += string.Format("where login_id_cli = '{0}',", cliente.idCliente);
+                strInsert += string.Format("senha_cli = '{0}',", cliente.senha_cli);
+                strInsert += string.Format("nome_cli = '{0}',", cliente.senha_cli);
+                strInsert += string.Format("cpf_cli = '{0}',", cliente.senha_cli);
+                strInsert += string.Format("telefone_cli = '{0}',", cliente.telefone_cli);
+                strInsert += string.Format("where login_id_cli = '{0}',", cliente.login_id_cli);
                 db.ExecutaComando(strInsert);
 
             }
@@ -63,7 +61,6 @@ namespace ModeloDLL
             }
 
         }
-        //SELECIONAR TODOS CLIENTE
         public MySqlDataReader Select()
         {
             try
@@ -81,27 +78,7 @@ namespace ModeloDLL
 
                 throw new Exception("Erro na aplicação em selecionar cliente" + ex.Message);
             }
+            
         }
-        //SELECIONAR CLIENTE POR ID
-        public MySqlDataReader SelectId(int idCliente)
-        {
-            try
-            {
-                string strString = string.Format("select * From cliente where idCliente = {0}; ", idCliente);
-                return db.RetornaComando(strString);
-            }
-            catch (MySqlException ex)
-            {
-
-                throw new Exception("Erro no banco em selecionar cliente" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception("Erro na aplicação em selecionar cliente" + ex.Message);
-            }
-        }
-
-
     }
 }

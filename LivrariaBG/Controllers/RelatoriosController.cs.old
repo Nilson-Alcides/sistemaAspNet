@@ -30,14 +30,16 @@ namespace LivrariaBG.Controllers
             {
                 var TempCliente = new Cliente()
                 {
-                    idCliente =int.Parse( retorno["idCliente"].ToString()),
-                    nomeCliente = retorno["nomeCliente"].ToString(),
-                    cpfCliente = retorno["cpfCliente"].ToString(),
-                    emailCliente = retorno["emailCliente"].ToString(),
-                    sexoCliente = retorno["sexoCliente"].ToString(),
-                    dataNascCliente =DateTime.Parse( retorno["dataNascCliente"].ToString()),
-                    statusCliente = retorno["statusCliente"].ToString(),
-                    
+                    nome_cli = retorno["nome_cli"].ToString(),
+                    cpf_cli = retorno["cpf_cli"].ToString(),
+                    telefone_cli = retorno["telefone_cli"].ToString(),
+                    email_cli = retorno["email_cli"].ToString(),
+                    endereco_cli = retorno["endereco_cli"].ToString(),
+                    complemento_cli = retorno["complemento_cli"].ToString(),
+                    bairro_cli = retorno["bairro_cli"].ToString(),
+                    cidade_cli = retorno["cidade_cli"].ToString(),
+                    uf_id_est = retorno["uf_id_est"].ToString(),
+                    cep_cli = retorno["cep_cli"].ToString()
                 };
                 clientes.Add(TempCliente);
             }

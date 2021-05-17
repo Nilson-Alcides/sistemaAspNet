@@ -1,0 +1,54 @@
+﻿using Dominios;
+using ModeloDLL;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace LivrariaBG.Controllers
+{
+    public class FuncionariosController : Controller
+    {
+        // GET: Funcionarios
+        public ActionResult Funcionarios()
+        {
+            var metodoFuncionario = new FuncionarioDAO();
+            return View(SelecionaFuncionario(metodoFuncionario.Select()));
+            
+        }
+        private List<Funcionario> SelecionaFuncionario(MySqlDataReader retorno)
+        {
+            var funcionarios = new List<Funcionario>();
+
+            while (retorno.Read())
+            {
+                var TempFincionario = new Funcionario()
+                {
+                    codigo_id_fun = int.Parse(retorno["codigo_id_fun"].ToString()),
+                    nome_fun = retorno["nome_fun"].ToString(),
+                    cpf_fun = retorno["cpf_fun"].ToString(),
+                    email_fun = retorno["email_fun"].ToString(),
+                    tetefone_fun = retorno["tetefone_fun"].ToString(),
+                    cargo_fun = retorno["cargo_fun"].ToString(),
+                    endereço = retorno["endereço"].ToString(),
+                    Bairro = retorno["Bairro"].ToString(),
+                    Cep = retorno["Cep"].ToString(),
+                    complemento = retorno["complemento"].ToString(),
+                    cidade = retorno["cidade"].ToString(),
+                    uf = retorno["uf"].ToString(),
+                    senha_fun = retorno["senha_fun"].ToString(),
+                    nivel_acesso = retorno["nivel_acesso"].ToString()
+                };
+                funcionarios.Add(TempFincionario);
+            }
+            retorno.Close();
+            return funcionarios;
+        }
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+    }
+}

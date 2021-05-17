@@ -35,72 +35,77 @@
                         <th>ID</th>
                         <th>Nome</th>
                         <th>CPF</th>
-                        <th>CEP</th>
-                        <th>Endereço</th>
-                        <th>Bairro</th>
-                        <th>Complemento</th>
-                        <th>Cidade</th>
+                        <th>E-mail</th>
+                        <th>Sexo</th>
+                        <th>Data Nascimento</th>
+                        <th>Status</th>
+                        @*<th>Cidade</th>
                         <th>UF</th>
-                        <th>Email</th>
-                        <th>Situação</th>
+                        <th>Email</th>*@
                         <th>Ação</th>
+                     
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var cliente in Model)
                     {
-                        <tr>
-                            <td>@cliente.login_id_cli</td>
-                            <td>@cliente.nome_cli</td>
-                            <td>@cliente.cpf_cli</td>
+                    <tr>
+                        <td>@cliente.idCliente</td>
+                        <td>@cliente.nomeCliente</td>
+                        <td>@cliente.cpfCliente</td>
 
-                            <td>@cliente.cep_cli</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-                                        data-toggle="popover" data-placement="top"
-                                        data-content="@cliente.endereco_cli">
-                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-                                        data-toggle="popover" data-placement="top"
-                                        data-content="@cliente.bairro_cli">
-                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-                                        data-toggle="popover" data-placement="top"
-                                        data-content="@cliente.complemento_cli">
-                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-                                        data-toggle="popover" data-placement="top"
-                                        data-content="@cliente.cidade_cli">
-                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
-                                </button>
-                            </td>
+                        <td>@cliente.emailCliente</td>
+                        <td>
+                            @cliente.sexoCliente
+                        </td>
 
-                            <td>@cliente.uf_id_est</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-                                        data-toggle="popover" data-placement="top"
-                                        data-content="@cliente.email_cli">
-                                    <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
-                                </button>
-                            </td>
 
-                            <td>Ativo</td>
-                            <td colspan="2">
-                                <a class="btn btn-info btn-sm" href="/Clientes/cadastrar" role="button">
-                                    <span class="fas fa-edit" title="Editar" aria-hidden="true"></span>
-                                </a>
-                            </td>
-                        </tr>
-                    }
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@cliente.dataNascCliente">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@cliente.statusCliente">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                         @*<td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@cliente.cidade_cli">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+
+                        <td>@cliente.uf_id_est</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@cliente.email_cli">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+
+                        <td>@cliente.statusCliente</td>*@
+                    <td colspan="2">
+                        <a class="btn btn-info btn-sm" href="/Clientes/cadastrar" role="button">
+                            <span class="fas fa-edit" title="Editar" aria-hidden="true"></span>
+                        </a>
+                        <a class="btn btn-info btn-sm" href="/Clientes/detalhes/@cliente.idCliente" role="button">
+                            <span class="fas fa-edit" title="Detalhes" aria-hidden="true"></span>
+
+                            @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "ConsultarClientesId", new { id = cliente.idCliente }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        </a>
+                        <a href="@Url.Action("detalhes", "detalhes", new { id = cliente.idCliente })">Editar</a>
+</tr>
+                        }
                 </tbody>
             </table>
         </div>

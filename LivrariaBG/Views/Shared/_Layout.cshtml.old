@@ -101,19 +101,6 @@
                     </li>
                 </ul>
 
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><span class="nav-link active">LIVROS</span></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Produtos/Cadastrar">
-                            <i class="fas fa-plus-circle"></i> <span>Cadastrar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Produtos/Consultar">
-                            <i class="fas fa-search"></i> <span>Consultar</span>
-                        </a>
-                    </li>
-                </ul>
 
                 <ul class="nav nav-pills">
                     <li class="nav-item"><span class="nav-link active">PRODUTOS</span></li>
@@ -153,7 +140,7 @@
 
 
         <!-- Bootstrap core JavaScript
-    ================================================== -->
+        ================================================== -->
 
 
         <script src="~/Scripts/jquery.js" /></script>
@@ -177,7 +164,7 @@
         </script>
 
         @RenderBody()
-       
+
 
 </body>
 </html>

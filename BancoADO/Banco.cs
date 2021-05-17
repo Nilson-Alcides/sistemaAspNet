@@ -12,8 +12,21 @@ namespace BancoADO
         private readonly MySqlConnection conexao;
         public Banco()
         {
-            conexao = new MySqlConnection(ConfigurationManager.ConnectionStrings["conexao"].ConnectionString);
-            conexao.Open();
+            try
+            {
+                conexao = new MySqlConnection(ConfigurationManager.ConnectionStrings["conexao"].ConnectionString);
+                conexao.Open();
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco de acesso" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação" + ex.Message);
+            }
 
         }
 

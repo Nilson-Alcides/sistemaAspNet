@@ -1,0 +1,22 @@
+﻿using BancoADO;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ModeloDLL
+{
+    public class FuncionarioDAO
+    {
+        private Banco db = new Banco();
+
+
+        public MySqlDataReader Select()
+        {
+            string strString = "select * From funcionario ";
+            return db.RetornaComando(strString);
+        }
+    }
+}

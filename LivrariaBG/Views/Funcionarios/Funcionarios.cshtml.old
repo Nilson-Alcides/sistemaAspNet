@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Dominios.Funcionario>
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Funcionários</span>
+                </li>
+            </ul>
+            <a class="btn btn-outline-primary" href="/funcionarios/cadastrar" role="button">
+                <span class="fas fa-user-plus" title="Cadastro" aria-hidden="true"></span>
+                <span>Cadastrar Funcionários</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>E-mail</th>
+                        <th>Tetefone</th>
+                        <th>Cargo</th>
+                        <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>CEP</th>
+                        <th>Complemento</th>
+                        <th>Cidade</th>
+                        <th>UF</th>
+                        <th>Senha</th>
+                        <th>Acesso</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var funcionario in Model)
+                    {
+
+                    <tr>
+                        <td>@funcionario.codigo_id_fun</td>
+                        <td>@funcionario.nome_fun</td>
+                        <td>@funcionario.cpf_fun</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.email_fun">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+
+                        <td>@funcionario.tetefone_fun</td>
+                       
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.cargo_fun">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.endereço">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.Bairro">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+
+                        <td>@funcionario.Cep</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.complemento">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.cidade">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td>@funcionario.uf</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
+                                    data-toggle="popover" data-placement="top"
+                                    data-content="@funcionario.senha_fun">
+                                <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td>@funcionario.nivel_acesso</td>
+                        <td colspan="2">
+                            <a class="btn btn-info btn-sm" href="/funcionarios/funcionarios" role="button">
+                                <span class="fas fa-edit" title="Editar" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>

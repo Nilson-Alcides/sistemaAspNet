@@ -56,6 +56,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -121,19 +122,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <None Include="Controllers\ClientesController.cs.old" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <None Include="Controllers\FuncionariosController.cs.old" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\GerenciamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MeusDadosController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <None Include="Controllers\RelatoriosController.cs.old" />
     <Compile Include="Controllers\RelatoriosController.cs" />
     <Compile Include="Controllers\VendasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Views\Clientes\detalhes.cshtml" />
+    <Content Include="Views\Clientes\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -222,21 +228,29 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml.old" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Vendas\RealizarVenda.cshtml" />
     <Content Include="Views\Vendas\Consultar.cshtml" />
     <Content Include="Views\Gerenciamento\Retirada.cshtml" />
     <Content Include="Views\Clientes\Cadastrar.cshtml" />
+    <None Include="Views\Clientes\Cadastrar.cshtml.old" />
     <Content Include="Views\Clientes\Consultar.cshtml" />
+    <None Include="Views\Clientes\Consultar.cshtml.old" />
     <Content Include="Views\Produtos\Cadastrar.cshtml" />
     <Content Include="Views\Produtos\Consultar.cshtml" />
     <Content Include="Views\Relatorios\Vendas.cshtml" />
     <Content Include="Views\Relatorios\Clientes.cshtml" />
     <Content Include="Views\Relatorios\ProdutoEstoque.cshtml" />
-    <Content Include="Views\Funcionarios\Funcionarios.cshtml" />
-    <Content Include="Views\MeusDados\MeusDados.cshtml" />
     <Content Include="Views\Funcionarios\Cadastrar.cshtml" />
+    <Content Include="Views\Funcionarios\create.cshtml" />
+    <Content Include="Views\Funcionarios\Funcionarios.cshtml" />
+    <None Include="Views\Funcionarios\Funcionarios.cshtml.old" />
+    <Content Include="Views\MeusDados\MeusDados.cshtml" />
+    <None Include="Views\Funcionarios\Cadastrar.cshtml.old" />
     <Content Include="Views\Clientes\ConsultarTodosClientes.cshtml" />
+    <Content Include="Views\Clientes\ConsultarClientesId.cshtml" />
+    <None Include="Views\Clientes\ConsultarTodosClientes.cshtml.old" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
   </ItemGroup>
