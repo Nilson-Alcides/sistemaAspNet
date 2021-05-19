@@ -21,7 +21,7 @@ namespace ModeloDLL
                     "dataNascCliente, statusCliente) " +
                    " values('{0}','{1}','{2}','{3}','{4}','{5}');",
                        cliente.nomeCliente, cliente.cpfCliente, cliente.emailCliente, cliente.sexoCliente,
-                       String.Format("{0:u}",cliente.dataNascCliente), cliente.statusCliente);
+                       String.Format("{0:u}", cliente.dataNascCliente), cliente.statusCliente);
                 db.ExecutaComando(strInsert);
 
             }
@@ -101,7 +101,26 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em selecionar cliente" + ex.Message);
             }
         }
+        // EXCLUIR
+        public void Delete(Cliente cliente)
+        {
+            try
+            {
+                string strInsert = "DELETE from cliente ";
+                strInsert += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
+                db.ExecutaComando(strInsert);
+            }
+            catch (MySqlException ex)
+            {
 
+                throw new Exception("Erro no banco em selecionar EXCLUIR" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em EXCLUIR cliente" + ex.Message);
+            }
+        }
 
     }
 }

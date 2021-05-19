@@ -91,11 +91,30 @@ namespace LivrariaBG.Controllers
             var metodoUsuario = new UsuarioDAO();
             return View(SelecionaUsiario(metodoUsuario.Select()));
         }
+
         //Deletar cliente
-        public ActionResult Deletar(int id)
+        public ActionResult Delete(int id)
         {
-            var metodoUsuario = new UsuarioDAO();
-            return View(SelecionaUsiario(metodoUsuario.Select()));
+            Cliente cliente = new Cliente { idCliente = id };
+            
+            var metodoCliente = new ClienteDAO();
+            return View(SelecionaCliente(metodoCliente.SelectId(id)).FirstOrDefault());
+
+        }
+
+
+
+
+        //Deletar cliente
+        [HttpPost, ActionName("Delete")]
+        public ActionResult ConfirmaDelete(int id)
+        {
+            Cliente cliente = new Cliente();
+            cliente.idCliente = id;
+            var metodoUsuario = new ClienteDAO();
+            metodoUsuario.Delete(cliente);
+
+            return RedirectToAction("ConsultarTodosClientes");
         }
 
 

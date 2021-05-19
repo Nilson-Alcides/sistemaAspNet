@@ -244,6 +244,7 @@
     <Content Include="Views\Clientes\ConsultarClientesId.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
