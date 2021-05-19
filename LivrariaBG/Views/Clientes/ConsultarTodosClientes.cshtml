@@ -96,14 +96,19 @@
                         <a class="btn btn-info btn-sm" href="/Clientes/cadastrar" role="button">
                             <span class="fas fa-edit" title="Editar" aria-hidden="true"></span>
                         </a>
+                        @*
+                            EXISTE TRES FORMAS DE PASSAR O PARAMETRO
+                            1° FORMA href="/Clientes/ConsultarClientesId/@cliente.idCliente"
+                            2° FORMA @Html.ActionLink("Details", "ConsultarClientesId", new { id = cliente.idCliente }) |
+                            3° FORMA <a href="@Url.Action("ConsultarClientesId",  new { id=cliente.idCliente })">Detalhes</a>
+                        *@
                         <a class="btn btn-info btn-sm" href="/Clientes/ConsultarClientesId/@cliente.idCliente" role="button">
                             <span class="fas fa-edit" title="Detalhes" aria-hidden="true"></span>
-
-                            @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                            @Html.ActionLink("Details", "ConsultarClientesId", new { id = cliente.idCliente }) |
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                         </a>
-                        <span><a href="@Url.Action("detalhes", "ConsultarClientesId",  new { id = cliente.idCliente })">Detalhes</a></span>
+                        @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                        @Html.ActionLink("Details", "ConsultarClientesId", new { id = cliente.idCliente }) |
+                        @*  @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        <a href="@Url.Action("ConsultarClientesId",  new { id=cliente.idCliente })">Detalhes</a>
 </tr>
                         }
                 </tbody>

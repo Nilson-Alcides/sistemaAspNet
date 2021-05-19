@@ -56,11 +56,11 @@ namespace LivrariaBG.Controllers
         }
 
         //Seleciona Cliente por ID
-        [HttpPost]
-        public ActionResult ConsultarClientesId(int idCliente)
+      
+        public ActionResult ConsultarClientesId(int id)
         {
             var metodoClienteId = new ClienteDAO();
-            return View(SelecionaCliente(metodoClienteId.SelectId(idCliente)).FirstOrDefault());
+            return View(SelecionaCliente(metodoClienteId.SelectId(id)).FirstOrDefault());
 
         }
         private List<Cliente> SelecionaCliente(MySqlDataReader retorno)
