@@ -101,10 +101,6 @@ namespace LivrariaBG.Controllers
             return View(SelecionaCliente(metodoCliente.SelectId(id)).FirstOrDefault());
 
         }
-
-
-
-
         //Deletar cliente
         [HttpPost, ActionName("Delete")]
         public ActionResult ConfirmaDelete(int id)

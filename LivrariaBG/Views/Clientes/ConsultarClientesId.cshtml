@@ -3,72 +3,108 @@
 @{
     ViewBag.Title = "ConsultarClientesId";
 }
+<section class="layout-content">
 
-<h2>ConsultarClientesId</h2>
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Detakhes do cliente</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.idCliente)
-        </dt>
+    <div class="container">
+        <div id="list-home" class="row">
+            <div class="col-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.idCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.idCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.idCliente)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nomeCliente)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.nomeCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nomeCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.nomeCliente)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cpfCliente)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.cpfCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cpfCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.cpfCliente)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.emailCliente)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.emailCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.emailCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.emailCliente)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.sexoCliente)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.sexoCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.sexoCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.sexoCliente)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.dataNascCliente)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.dataNascCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.dataNascCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.dataNascCliente)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.statusCliente)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.statusCliente)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.statusCliente)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.statusCliente)
+                    </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                </dl>
+            </div>
+
+            
+            @*<p>
+                @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+                <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">
+                    Cancelar
+                </a>
+            </p>*@
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/@Model.idCliente" role="button"> Atualizar</a>
+                       
+                    <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">Cancelar</a>
+                </div>
+
+            }
+        </div>
+    </div>       
+   
+
+</section>
+
+
+
+
