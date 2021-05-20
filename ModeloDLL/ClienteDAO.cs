@@ -21,6 +21,7 @@ namespace ModeloDLL
                     "dataNascCliente, statusCliente) " +
                    " values('{0}','{1}','{2}','{3}','{4}','{5}');",
                        cliente.nomeCliente, cliente.cpfCliente, cliente.emailCliente, cliente.sexoCliente,
+
                        String.Format("{0:u}", cliente.dataNascCliente), cliente.statusCliente);
                 db.ExecutaComando(strInsert);
 

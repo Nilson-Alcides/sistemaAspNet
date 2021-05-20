@@ -134,7 +134,16 @@ namespace LivrariaBG.Controllers
             return usuarios;
         }
 
-        
+        public ActionResult AtualizarCliente(int id)
+        {
+            Cliente cliente = new Cliente();
+            cliente.idCliente = id;
+            var metodoUsuario = new ClienteDAO();
+            metodoUsuario.SelectId(id);
+
+            return View(cliente);
+        }
+
 
 
     }
