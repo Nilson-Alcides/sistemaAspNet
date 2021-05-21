@@ -113,7 +113,6 @@ namespace LivrariaBG.Controllers
             return RedirectToAction("ConsultarTodosClientes");
         }
 
-
         private List<Usuario> SelecionaUsiario(MySqlDataReader retorno)
         {
             var usuarios = new List<Usuario>();
@@ -134,14 +133,44 @@ namespace LivrariaBG.Controllers
             return usuarios;
         }
 
+        // Selecuina o cliente para atualizar
         public ActionResult AtualizarCliente(int id)
         {
-            Cliente cliente = new Cliente();
-            cliente.idCliente = id;
-            var metodoUsuario = new ClienteDAO();
-            metodoUsuario.SelectId(id);
+            try
+            {
+                Cliente cliente = new Cliente();
+                cliente.idCliente = id;
+                var metodoCliente = new ClienteDAO();
+                return View(SelecionaCliente(metodoCliente.SelectId(id)).FirstOrDefault());
 
-            return View(cliente);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao listar cliente" + ex.Message);
+            }
+
+        }
+        // Atualizar cliente
+        [HttpPost]
+        public ActionResult AtualizarCliente(Cliente cliente)
+        {
+            try
+            {
+                if (ModelState.IsValid) { 
+                var metodoCliente = new ClienteDAO();
+                metodoCliente.Update(cliente);
+                return RedirectToAction("ConsultarTodosClientes");
+                }
+                return View(cliente);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao atualuzar cliente" + ex.Message);
+            }
+            
         }
 
 

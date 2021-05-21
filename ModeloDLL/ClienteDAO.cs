@@ -42,13 +42,13 @@ namespace ModeloDLL
         {
             try
             {
-                string strInsert = "update tbUsusrio set ";
+                string strInsert = "UPDATE CLIENTE SET ";
                 strInsert += string.Format("nomeCliente = '{0}',", cliente.nomeCliente);
                 strInsert += string.Format("cpfCliente = '{0}',", cliente.cpfCliente);
                 strInsert += string.Format("emailCliente = '{0}',", cliente.emailCliente);
                 strInsert += string.Format("sexoCliente = '{0}',", cliente.sexoCliente);
-                strInsert += string.Format("dataNascCliente = '{0}',", cliente.dataNascCliente);
-                strInsert += string.Format("where login_id_cli = '{0}',", cliente.idCliente);
+                strInsert += string.Format("dataNascCliente = '{0}' ", cliente.dataNascCliente);
+                strInsert += string.Format(" where idCliente = {0} ;", cliente.idCliente);
                 db.ExecutaComando(strInsert);
 
             }
