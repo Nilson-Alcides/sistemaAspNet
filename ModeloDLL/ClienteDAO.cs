@@ -11,11 +11,13 @@ namespace ModeloDLL
 {
     public class ClienteDAO
     {
+        string retorno;
+
         private Banco db = new Banco();
         //INSERIR CLINETE
         public void Insert(Cliente cliente)
         {
-            string retorno;
+            
             try
             {
                 string strInsert = string.Format("INSERT INTO CLIENTE(nomeCliente, cpfCliente, emailCliente, sexoCliente," +
@@ -25,6 +27,12 @@ namespace ModeloDLL
                        String.Format("{0:u}", cliente.dataNascCliente), cliente.statusCliente);
 
                 retorno =  db.RetornaDado(strInsert);
+
+                string strInsertTel = string.Format("INSERT INTO TELEFONE(idCliente, TipoTelefone, dddTel, numTelefone) " +
+                   " values({0},'{1}',{2},{3});",
+                       retorno, cliente.telefone.TipoTelefone, cliente.telefone.dddTelefone, cliente.telefone.numeroTelefone);
+
+                db.ExecutaComando(strInsertTel);
 
             }
             catch (MySqlException ex)

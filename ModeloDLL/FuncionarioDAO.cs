@@ -27,7 +27,7 @@ namespace ModeloDLL
                 retorno = db.RetornaDado(strInsert);
 
                
-                string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, TipoTelefone, dddTelefone, numeroTelefone) " +
+                string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, TipoTelefone, dddTel, numTelefone) " +
                    " values({0},'{1}',{2},{3});",
                        retorno, funcionario.telefone.TipoTelefone, funcionario.telefone.dddTelefone, funcionario.telefone.numeroTelefone);
 

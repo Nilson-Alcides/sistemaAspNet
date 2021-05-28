@@ -40,6 +40,7 @@ namespace Dominios
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Informe a data de nascimento")]
         public DateTime dataNascCliente { get; set; }
+        public Telefone telefone { get; set; }
 
         [Display(Name = "Status")]
         [Required(ErrorMessage = "O status é obrigatorio")]
