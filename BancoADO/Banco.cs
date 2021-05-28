@@ -46,6 +46,11 @@ namespace BancoADO
             var vComando = new MySqlCommand(strQuery, conexao);
             return vComando.ExecuteReader();
         }
+        public string RetornaDado(string StrQuery)
+        {
+            var vComando = new MySqlCommand(StrQuery, conexao);
+            return vComando.ExecuteScalar().ToString();
+        }
 
 
         public void Dispose()

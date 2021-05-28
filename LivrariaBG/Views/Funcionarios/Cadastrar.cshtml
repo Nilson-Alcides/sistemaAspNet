@@ -50,6 +50,31 @@
                     </div>
                 </div>
 
+                @*__________________________________________TELEFONE______________________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.telefone.TipoTelefone, htmlAttributes: new { @class = "control-label col-md-6" })
+
+                    @Html.EditorFor(model => model.telefone.TipoTelefone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefone.TipoTelefone, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.telefone.dddTelefone, htmlAttributes: new { @class = "control-label col-md-6" })
+
+                    @Html.EditorFor(model => model.telefone.dddTelefone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefone.dddTelefone, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.telefone.numeroTelefone, htmlAttributes: new { @class = "control-label col-md-6" })
+
+                    @Html.EditorFor(model => model.telefone.numeroTelefone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.telefone.numeroTelefone, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+                @*__________________________________________FIM TELEFONE______________________________________________________*@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -67,6 +92,10 @@
                         <div class="invalid-feedback"></div>
                     </div>
                 </div>
+
+
+
+
 
                 @* <div class="form-row">
             <div class="form-group col-md-6">
@@ -158,4 +187,12 @@
             </form>
         </div>
     </section>
+
+    <script>
+        $(document).ready(function () {
+            $("#cpfFunc").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
+        });</script>
+
+
+    @Scripts.Render("~/bundles/inputmask")
 }

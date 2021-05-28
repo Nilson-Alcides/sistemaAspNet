@@ -42,7 +42,9 @@ namespace Dominios
         [Required(ErrorMessage = "O senha é obrigatorio")]
         [StringLength(10, MinimumLength = 6, ErrorMessage = "A senha deve ter entre 6 e 10 caracteres")]
         public string senhaFunc { get; set; }
-        
+
+        public Telefone telefone { get; set; }
+
         //Nivel de acesso
         [Display(Name = "Privilégio")]
         [Required(ErrorMessage = "O nivel de acesso é obrigatorio")]

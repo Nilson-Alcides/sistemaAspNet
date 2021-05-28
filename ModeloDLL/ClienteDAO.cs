@@ -15,15 +15,16 @@ namespace ModeloDLL
         //INSERIR CLINETE
         public void Insert(Cliente cliente)
         {
+            string retorno;
             try
             {
                 string strInsert = string.Format("INSERT INTO CLIENTE(nomeCliente, cpfCliente, emailCliente, sexoCliente," +
                     "dataNascCliente, statusCliente) " +
-                   " values('{0}','{1}','{2}','{3}','{4}','{5}');",
-                       cliente.nomeCliente, cliente.cpfCliente, cliente.emailCliente, cliente.sexoCliente,
-
+                   " values('{0}','{1}','{2}','{3}','{4}','{5}'); SELECT LAST_INSERT_ID();",
+                       cliente.nomeCliente, cliente.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty), cliente.emailCliente, cliente.sexoCliente,
                        String.Format("{0:u}", cliente.dataNascCliente), cliente.statusCliente);
-                db.ExecutaComando(strInsert);
+
+                retorno =  db.RetornaDado(strInsert);
 
             }
             catch (MySqlException ex)

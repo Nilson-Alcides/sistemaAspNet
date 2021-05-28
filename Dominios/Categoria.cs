@@ -11,5 +11,7 @@ namespace Dominios
 
         public int idCategoria { get; set; }
         public string nomeCategoria { get; set; }
+        public Produto produto { get; set; }
+        
     }
 }

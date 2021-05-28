@@ -12,18 +12,26 @@ namespace ModeloDLL
     public class FuncionarioDAO
     {
         private Banco db = new Banco();
-
-        //INSERIR CLINETE
+        string retorno;
+        //INSERIR FUNCIONARIO
         public void Insert(Funcionario funcionario)
         {
+            
             try
             {
-                string strInsert = string.Format("INSERT INTO FUNCIONARIo(nomeFunc, cpfFunc, emailFunc, cargo," +
+                string strInsert = string.Format("INSERT INTO FUNCIONARIO(nomeFunc, cpfFunc, emailFunc, cargo," +
                     "senhaFunc, nivelAcesso) " +
-                   " values('{0}','{1}','{2}','{3}','{4}','{5}');",
-                       funcionario.nomeFunc, funcionario.cpfFunc, funcionario.emailFunc, funcionario.cargo,
+                   " values('{0}','{1}','{2}','{3}','{4}','{5}'); SELECT LAST_INSERT_ID();",
+                       funcionario.nomeFunc, funcionario.cpfFunc.Replace(".", string.Empty).Replace("-", string.Empty), funcionario.emailFunc, funcionario.cargo,
                        funcionario.senhaFunc, funcionario.nivelAcesso);
-                db.ExecutaComando(strInsert);
+                retorno = db.RetornaDado(strInsert);
+
+               
+                string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, TipoTelefone, dddTelefone, numeroTelefone) " +
+                   " values({0},'{1}',{2},{3});",
+                       retorno, funcionario.telefone.TipoTelefone, funcionario.telefone.dddTelefone, funcionario.telefone.numeroTelefone);
+
+                db.ExecutaComando(strInsertTel);
 
             }
             catch (MySqlException ex)
@@ -36,8 +44,9 @@ namespace ModeloDLL
 
                 throw new Exception("Erro na aplicação em cadastro cliente" + ex.Message);
             }
+            
         }
-
+       
         //Seleciona todos funcionario
         public MySqlDataReader Select()
         {
