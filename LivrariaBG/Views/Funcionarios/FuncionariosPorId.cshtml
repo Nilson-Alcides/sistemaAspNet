@@ -1,0 +1,74 @@
+﻿@model Dominios.Funcionario
+
+@{
+    ViewBag.Title = "FuncionariosPorId";
+}
+
+<h2>FuncionariosPorId</h2>
+
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpfFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpfFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senhaFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senhaFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nivelAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nivelAcesso)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

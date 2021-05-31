@@ -27,31 +27,31 @@
                 <thead class="thead-dark">
 
                     <tr>
+                        <th>ID</th>
                         <th>Nome</th>
-                        <th>Email</th>
                         <th>CPF</th>
-                        <th>Telefone</th>
-                        <th>CEP</th>
-                        <th>Endereço</th>
-                        <th>Bairro</th>
-                        <th>Cidade</th>
-                        <th>UF</th>
+                        <th>E-mail</th>
+                        <th>Sexo</th>
+                        <th>Data Nascimento</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var cliente in Model)
                     {
-                        <tr>
-                            <td>@cliente.nome_cli</td>
-                            <td>@cliente.email_cli</td>
-                            <td>@cliente.cpf_cli</td>
-                            <td>@cliente.telefone_cli</td>
-                            <td>@cliente.cep_cli</td>
-                            <td>@cliente.endereco_cli</td>
-                            <td>@cliente.bairro_cli</td>
-                            <td>@cliente.cidade_cli</td>
-                            <td>@cliente.uf_id_est</td>
-                        </tr>
+                    <tr>
+                        <td>@cliente.idCliente</td>
+                        <td>@cliente.nomeCliente</td>
+                        <td>@cliente.cpfCliente</td>
+                        <td>@cliente.emailCliente</td>
+                        @*<td>@cliente.telefone.numTel1</td>
+                        <td>@cliente.telefone.numTel2</td>*@
+                        <td>@cliente.sexoCliente</td>
+                        <td>@cliente.dataNascCliente</td>
+                        <td>@cliente.statusCliente</td>
+                        @*<td>@cliente.endereco.logradouro</td>
+                        <td>@cliente.endereco.numero</td>*@
+                    </tr>
                     }
                 </tbody>
             </table>
