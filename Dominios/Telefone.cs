@@ -12,17 +12,20 @@ namespace Dominios
         [Display(Name = "Codigo")]       
         public int idTelefone { get; set; }
 
-        [Display(Name = "Tipo")]
-        [Required(ErrorMessage = "O tipo é obrigatorio")]        
-        public string TipoTelefone { get; set; }
+       // [DataType(DataType.PhoneNumber)]
+        //[RegularExpression(@"^\(\d{2}\)\d{5}-\d{4}$",
+        // ErrorMessage = "O numero do Celular não é valido use (99)99999-9999")]
+        [Display(Name = "Celular")]
+        //[Required(ErrorMessage = "O numero é obrigatorio")]
+        public int numTel1 { get; set; }
 
-        [Display(Name = "DDD")]
-        [Required(ErrorMessage = "O ddd é obrigatorio")]
-        public int dddTelefone { get; set; }
+       
+        [Display(Name = "Residencial")]       
+        public int numTel2 { get; set; }
+
         
-        [Display(Name = "Numero")]
-        [Required(ErrorMessage = "O numero é obrigatorio")]
-        public int numeroTelefone { get; set; }
+        [Display(Name = "Comercial")]
+        public int numTel3 { get; set; }
 
     }
 }

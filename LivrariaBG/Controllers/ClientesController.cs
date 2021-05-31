@@ -52,7 +52,7 @@ namespace LivrariaBG.Controllers
         public ActionResult ConsultarTodosClientes()
         {
             var metodoCliente = new ClienteDAO();
-            return View(SelecionaCliente(metodoCliente.Select()));
+            return View(SelecionaCliente(metodoCliente.SelectView()));
         }
 
         //Seleciona Cliente por ID
@@ -78,6 +78,7 @@ namespace LivrariaBG.Controllers
                     sexoCliente = retorno["sexoCliente"].ToString(),
                     dataNascCliente = DateTime.Parse(retorno["dataNascCliente"].ToString()),
                     statusCliente = retorno["statusCliente"].ToString(),
+                    
 
                 };
                 clientes.Add(TempCliente);
@@ -172,8 +173,6 @@ namespace LivrariaBG.Controllers
             }
             
         }
-
-
 
     }
  }

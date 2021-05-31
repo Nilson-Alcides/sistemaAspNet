@@ -66,5 +66,45 @@ namespace LivrariaBG.Controllers
             return View(funcionario);
 
         }
+        // Selecuina o funcionario para atualizar
+        public ActionResult AtualizarFuncionario(int id)
+        {
+            try
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.idFunc = id;
+                var metodoFuncionario = new FuncionarioDAO();
+                return View(SelecionaFuncionario(metodoFuncionario.SelectId(id)).FirstOrDefault());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao listar cliente" + ex.Message);
+            }
+
+        }
+        // Atualizar cliente
+        [HttpPost]
+        public ActionResult AtualizarFuncionario(Funcionario funcionario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var metodoFuncionario = new FuncionarioDAO();
+                    metodoFuncionario.Update(funcionario);
+                    return RedirectToAction("Funcionarios");
+                }
+                return View(funcionario);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao atualuzar cliente" + ex.Message);
+            }
+
+        }
     }
 }

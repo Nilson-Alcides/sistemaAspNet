@@ -26,12 +26,19 @@ namespace ModeloDLL
                        funcionario.senhaFunc, funcionario.nivelAcesso);
                 retorno = db.RetornaDado(strInsert);
 
-               
-                string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, TipoTelefone, dddTel, numTelefone) " +
-                   " values({0},'{1}',{2},{3});",
-                       retorno, funcionario.telefone.TipoTelefone, funcionario.telefone.dddTelefone, funcionario.telefone.numeroTelefone);
 
+                string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, numTel1, numTel2, numTel3) " +
+                   " values({0},'{1}',{2},{3});",
+                       retorno, funcionario.telefone.numTel1, funcionario.telefone.numTel2, funcionario.telefone.numTel3);
                 db.ExecutaComando(strInsertTel);
+
+                string strInsertEnd = string.Format("INSERT INTO ENDERECO(idFunc, logradouro, numero," +
+                    "complemento, bairro, CEP, cidade, estado, UF) " +
+                    " values({0},'{1}',{2},'{3}','{4}',{5},'{6}','{7}','{8}');",
+                      retorno, funcionario.endereco.logradouro, funcionario.endereco.numero,
+                      funcionario.endereco.complemento, funcionario.endereco.bairro, funcionario.endereco.CEP, funcionario.endereco.cidade,
+                      funcionario.endereco.estado, funcionario.endereco.UF);
+                db.ExecutaComando(strInsertEnd);
 
             }
             catch (MySqlException ex)
@@ -72,7 +79,7 @@ namespace ModeloDLL
         {
             try
             {
-                string strString = string.Format("select * From cliente where codigo_id_fun = {0}; ", id);
+                string strString = string.Format("select * From funcionario where idFunc = {0}; ", id);
                 return db.RetornaComando(strString);
             }
             catch (MySqlException ex)
@@ -85,6 +92,34 @@ namespace ModeloDLL
 
                 throw new Exception("Erro na aplicação em selecionar cliente" + ex.Message);
             }
+        }
+        //ATUALIZAR FUNCIONARIO
+        public void Update(Funcionario  funcionario)
+        {         
+            try
+            {
+                string strInsert = "UPDATE FUNCIONARIO SET ";
+                strInsert += string.Format("nomeFunc = '{0}',", funcionario.nomeFunc);
+                strInsert += string.Format("cpfFunc = '{0}',", funcionario.cpfFunc.Replace(".", string.Empty).Replace("-", string.Empty));
+                strInsert += string.Format("emailFunc = '{0}',", funcionario.emailFunc);
+                strInsert += string.Format("cargo = '{0}',", funcionario.cargo);                
+                strInsert += string.Format("senhaFunc = '{0}', ", funcionario.senhaFunc);
+                strInsert += string.Format("nivelAcesso = '{0}' ", funcionario.nivelAcesso);
+                strInsert += string.Format(" where idFunc = {0} ;", funcionario.idFunc);
+                db.ExecutaComando(strInsert);
+
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em atualizar funcionario" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em atualizar funcionario" + ex.Message);
+            }
+
         }
 
     }

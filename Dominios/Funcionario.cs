@@ -16,8 +16,8 @@ namespace Dominios
         // Nome do funcionario
         [Display(Name = "Nome", Description = "Nome e Sobrenome.")]
         [Required(ErrorMessage = "O nome completo é obrigatório.")]
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage =
-           "Números e caracteres especiais não são permitidos no nome.")]
+    ///    [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage =
+       //    "Números e caracteres especiais não são permitidos no nome.")]
         public string nomeFunc { get; set; }
         
         // CPF do funcionario
@@ -44,6 +44,7 @@ namespace Dominios
         public string senhaFunc { get; set; }
 
         public Telefone telefone { get; set; }
+        public Endereco endereco { get; set; }
 
         //Nivel de acesso
         [Display(Name = "Privilégio")]

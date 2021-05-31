@@ -10,7 +10,7 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <i class="fas fa-caret-right"></i>
-                    <span>Detakhes do cliente</span>
+                    <span>Detalhes do cliente</span>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.idCliente)
+                        @Html.DisplayFor(model => model.idCliente, new { @readonly = "readonly" })
                     </dd>
 
                     <dt>
@@ -75,6 +75,15 @@
                     <dd>
                         @Html.DisplayFor(model => model.statusCliente)
                     </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.endereco.logradouro)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.endereco.logradouro)
+                    </dd>
+
 
                 </dl>
             </div>

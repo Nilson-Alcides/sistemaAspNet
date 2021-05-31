@@ -140,7 +140,6 @@
     <Content Include="Scripts\inputmask\inputmask.min.js" />
     <Content Include="Scripts\inputmask\jquery.inputmask.js" />
     <Content Include="Scripts\inputmask\jquery.inputmask.min.js" />
-    <Content Include="Views\Clientes\detalhes.cshtml" />
     <Content Include="Views\Clientes\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +250,9 @@
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\Delete.cshtml" />
     <Content Include="Views\Clientes\AtualizarCliente.cshtml" />
+    <Content Include="Views\Clientes\detalhes.cshtml" />
+    <Content Include="Views\Funcionarios\FuncionariosPorId.cshtml" />
+    <Content Include="Views\Funcionarios\AtualizarFuncionario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
