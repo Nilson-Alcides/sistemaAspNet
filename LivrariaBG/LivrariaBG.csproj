@@ -228,7 +228,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout_Old.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Vendas\RealizarVenda.cshtml" />
     <Content Include="Views\Vendas\Consultar.cshtml" />
@@ -253,6 +253,7 @@
     <Content Include="Views\Clientes\detalhes.cshtml" />
     <Content Include="Views\Funcionarios\FuncionariosPorId.cshtml" />
     <Content Include="Views\Funcionarios\AtualizarFuncionario.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
