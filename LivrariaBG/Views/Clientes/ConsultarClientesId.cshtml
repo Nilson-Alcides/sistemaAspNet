@@ -145,18 +145,21 @@
 
                 </div>
             </div>
+            @using (Html.BeginForm())
+             {
+                @Html.AntiForgeryToken()
+                <br />
+                <div class="form-group">
+                    <div class="form-actions no-color">
+                        <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">
+                            Voltar
+                        </a>
+                    </div>
 
-            <br />
-            <div class="form-group">
-                <div class="form-actions no-color">
-                    <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">
-                        Voltar
-                    </a>
                 </div>
+             }
+         </div>
 
-            </div>
-
-        </div>
     </section>
 
 
