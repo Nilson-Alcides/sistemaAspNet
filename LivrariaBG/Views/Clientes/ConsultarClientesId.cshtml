@@ -1,116 +1,163 @@
 ﻿@model Dominios.Cliente
 
-@{
-    ViewBag.Title = "ConsultarClientesId";
-}
-<section class="layout-content">
+   
+    <section class="layout-content">
 
-    <nav class="navbar navbar-expand-md bg-light">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <i class="fas fa-caret-right"></i>
-                    <span>Detalhes do cliente</span>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div id="list-home" class="row">
-            <div class="col-4">
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.idCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.idCliente, new { @readonly = "readonly" })
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.nomeCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.nomeCliente)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.cpfCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.cpfCliente)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.emailCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.emailCliente)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.sexoCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.sexoCliente)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.dataNascCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.dataNascCliente)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.statusCliente)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.statusCliente)
-                    </dd>
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.endereco.logradouro)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.endereco.logradouro)
-                    </dd>
-
-
-                </dl>
+        <nav class="navbar navbar-expand-md bg-light">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <i class="fas fa-caret-right"></i>
+                        <span>Detalhes do cliente</span>
+                    </li>
+                </ul>
             </div>
-            @*<p>
-                @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-                <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">
-                    Cancelar
-                </a>
-            </p>*@
+        </nav>
+
+        <div class="container">
+            <div id="list-home" class="row">
+                @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.idCliente, htmlAttributes: new { @class = "control-label col-md-6" })
+                        @Html.EditorFor(model => model.idCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.nomeCliente, htmlAttributes: new { @class = "control-label col-md-6" })
+                        @Html.EditorFor(model => model.nomeCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.cpfCliente, htmlAttributes: new { @class = "control-label col-md-4" })
+                        @Html.EditorFor(model => model.cpfCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.sexoCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.sexoCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    </div>
+                </div>
+                @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+                @*__________________________________________INICIO 2º LINHA COM EMAIL____________________________________________*@
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        @Html.LabelFor(model => model.emailCliente, htmlAttributes: new { @class = "control-label col-md-6" })
+                        @Html.EditorFor(model => model.emailCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.dataNascCliente, htmlAttributes: new { @class = "control-label col-md-4" })                        <
+                        @Html.EditorFor(model => model.dataNascCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.statusCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.statusCliente, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                @*__________________________________________FIM 2º LINHA__________________________________________________*@
 
 
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+                @*__________________________________________TELEFONE______________________________________________________*@
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.telefone.numTel1, htmlAttributes: new { @class = "control-label col-md-4" })
+                        @Html.EditorFor(model => model.telefone.numTel1, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
 
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.telefone.numTel2, htmlAttributes: new { @class = "control-label col-md-4" })
+                        @Html.EditorFor(model => model.telefone.numTel2, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.telefone.numTel3, htmlAttributes: new { @class = "control-label col-md-4" })
+                        @Html.EditorFor(model => model.telefone.numTel3, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+                @*__________________________________________FIM TELEFONE______________________________________________________*@
+
+                @*__________________________________________INICIO ENDEREÇO LINHA 1___________________________________________*@
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.endereco.logradouro, htmlAttributes: new { @class = "control-label col-md-5" })
+                        @Html.EditorFor(model => model.endereco.logradouro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.endereco.numero, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.endereco.numero, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        @Html.LabelFor(model => model.endereco.complemento, htmlAttributes: new { @class = "control-label col-md-3" })
+                        @Html.EditorFor(model => model.endereco.complemento, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.endereco.CEP, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.endereco.CEP, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                </div>
+                @*__________________________________________INICIO ENDEREÇO LINHA 2___________________________________________*@
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.endereco.bairro, htmlAttributes: new { @class = "control-label col-md-5" })
+                        @Html.EditorFor(model => model.endereco.bairro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        @Html.LabelFor(model => model.endereco.cidade, htmlAttributes: new { @class = "control-label col-md-3" })
+                        @Html.EditorFor(model => model.endereco.cidade, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.endereco.estado, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.endereco.estado, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.endereco.UF, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.endereco.UF, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <br />
+            <div class="form-group">
                 <div class="form-actions no-color">
-                    <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/@Model.idCliente" role="button"> Atualizar</a>
-                       
-                    <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">Cancelar</a>
+                    <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">
+                        Voltar
+                    </a>
                 </div>
 
-            }
-        </div>
-    </div>       
-   
+            </div>
 
-</section>
+        </div>
+    </section>
 
 
 
