@@ -33,7 +33,7 @@
                     <img src="~/Imagens/Logo_Livraria.png" width="60" height="40" class="img-responsive">
                     <a class="navbar-brand " href="#">Livraria BG</a>
                 </div>
-                @*__________________________________________NAV FUNCIONARIOS________________________________________*@
+                @*__________________________________________NAV FUNCIONARIOS ________________________________________*@
                 <div class="nav nav-pills">
                     <a class="nav-link2 sizet" href="/Funcionarios/Funcionarios"> <i class="fas fa-users sizet"></i> <span>Funcionários</span></a>
                 </div>
@@ -41,14 +41,14 @@
                 <div class="nav nav-pills">
                     <a class="nav-link2 sizet" href="/MeusDados/MeusDados"> <i class="fas fa-user-circle sizet"></i> <span>Meus Dados</span></a>
                 </div>
-                @*__________________________________________NAV LOGIN________________________________________*@
+                @*__________________________________________NAV LOGIN ________________________________________*@
                 <div class="nav nav-pills">
                     <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair</span></a>
                 </div>
             </div>
         </nav>
     </header>
-    @*__________________________________________NAV HOME________________________________________*@
+    @*__________________________________________NAV HOME ________________________________________*@
     <div class="layout-main">
 
         <aside>
@@ -60,7 +60,7 @@
                         </a>
                     </li>
                 </ul>
-                @*__________________________________________NAV VENDAS________________________________________*@
+                @*__________________________________________NAV VENDAS ________________________________________*@
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                 <div class="card-header" role="tab" id="venda" style="background-color:#5579b6">
                     <a data-toggle="collapse" data-parent="#accordionEx" href="#vendas" aria-expanded="true"
@@ -84,9 +84,14 @@
                         <a class="nav-item" href="/Vendas/Consultar" style="color:black">
                             <i class="fas fa-search"></i> <span>Consultar</span>
                         </a>
+                        <br />
+                        <br />
+                        <a class="nav-item" href="/Relatorios/Vendas" style="color:black">
+                            <i class="far fa-file-alt"></i> <span>Notas Fiscais</span>
+                        </a>
                     </div>
                 </div>
-                @*__________________________________________NAV GERENCIAMENTO________________________________________*@
+                @*__________________________________________NAV GERENCIAMENTO ________________________________________*@
                 <div class="card-header" role="tab" id="gerenciamento" style="background-color:#5579b6">
                     <a data-toggle="collapse" data-parent="#accordionEx" href="#gerenciamentos" aria-expanded="true"
                        aria-controls="gerenciamentos" style="color:#FFFFFF">
@@ -103,7 +108,7 @@
                         </a>
                     </div>
                 </div>
-                @*__________________________________________NAV CLIENTES________________________________________*@
+                @*__________________________________________NAV CLIENTES ________________________________________*@
                 <div class="card-header" role="tab" id="cliente" style="background-color:#5579b6">
                     <a data-toggle="collapse" data-parent="#accordionEx" href="#clientes" aria-expanded="true"
                        aria-controls="clientes" style="color:#FFFFFF">
@@ -126,7 +131,33 @@
                         </a>
                     </div>
                 </div>
-                @*__________________________________________NAV PRODUTO________________________________________*@
+                @*__________________________________________NAV LIVROS ________________________________________*@
+                <div class="card-header" role="tab" id="livro" style="background-color:#5579b6">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#livros" aria-expanded="true"
+                       aria-controls="livros" style="color:#FFFFFF">
+                        <h6 class="mb-0">
+                            LIVROS <i class="fas fa-angle-down rotate-icon"></i>
+                        </h6>
+                    </a>
+                </div>
+
+                <div id="livros" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+
+                    <div class="card-body">
+                        <a class="nav-item" href="/Produtos/Cadastrar" style="color:black">
+                            <i class="fas fa-plus-circle"></i> <span>Cadastrar</span>
+                        </a>
+
+                        <br />
+                        <br />
+
+                        <a class="nav-item" href="/Produtos/Consultar" style="color:black">
+                            <i class="fas fa-search"></i> <span>Consultar</span>
+                        </a>
+
+                    </div>
+                </div>
+                @*__________________________________________NAV PRODUTOS ________________________________________*@
                 <div class="card-header" role="tab" id="produto" style="background-color:#5579b6">
                     <a data-toggle="collapse" data-parent="#accordionEx" href="#produtos" aria-expanded="true"
                        aria-controls="produtos" style="color:#FFFFFF">
@@ -152,17 +183,96 @@
 
                     </div>
                 </div>
-                @*__________________________________________NAV CATEGORIA________________________________________*@
+                @*__________________________________________ NAV CATEGORIAS ________________________________________*@
                 <div class="card-header" role="tab" id="categoria" style="background-color:#5579b6">
-                    <a data-toggle="collapse" data-parent="#accordionEx" href="#categoria" aria-expanded="true"
-                       aria-controls="categoria" style="color:#FFFFFF">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#categorias" aria-expanded="true"
+                       aria-controls="categorias" style="color:#FFFFFF">
                         <h6 class="mb-0">
-                            CATEGORIA <i class="fas fa-angle-down rotate-icon"></i>
+                            CATEGORIAS <i class="fas fa-angle-down rotate-icon"></i>
                         </h6>
                     </a>
                 </div>
 
-                <div id="categoria" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                <div id="categorias" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+
+                    <div class="card-body">
+                        <a class="nav-item" href="/Produtos/Cadastrar" style="color:black">
+                            <i class="fas fa-plus-circle"></i> <span>Cadastrar</span>
+                        </a>
+
+                        <br />
+                        <br />
+
+                        <a class="nav-item" href="/Produtos/Consultar" style="color:black">
+                            <i class="fas fa-search"></i> <span>Consultar</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                @*__________________________________________NAV EDITORAS ________________________________________*@
+                <div class="card-header" role="tab" id="editora" style="background-color:#5579b6">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#editoras" aria-expanded="true"
+                       aria-controls="editoras" style="color:#FFFFFF">
+                        <h6 class="mb-0">
+                            EDITORAS <i class="fas fa-angle-down rotate-icon"></i>
+                        </h6>
+                    </a>
+                </div>
+
+                <div id="editoras" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+
+                    <div class="card-body">
+                        <a class="nav-item" href="/Produtos/Cadastrar" style="color:black">
+                            <i class="fas fa-plus-circle"></i> <span>Cadastrar</span>
+                        </a>
+
+                        <br />
+                        <br />
+
+                        <a class="nav-item" href="/Produtos/Consultar" style="color:black">
+                            <i class="fas fa-search"></i> <span>Consultar</span>
+                        </a>
+
+                    </div>
+                </div>
+                @*__________________________________________NAV AUTORES ________________________________________*@
+                <div class="card-header" role="tab" id="autore" style="background-color:#5579b6">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#autores" aria-expanded="true"
+                       aria-controls="autores" style="color:#FFFFFF">
+                        <h6 class="mb-0">
+                            AUTORES <i class="fas fa-angle-down rotate-icon"></i>
+                        </h6>
+                    </a>
+                </div>
+
+                <div id="autores" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+
+                    <div class="card-body">
+                        <a class="nav-item" href="/Produtos/Cadastrar" style="color:black">
+                            <i class="fas fa-plus-circle"></i> <span>Cadastrar</span>
+                        </a>
+
+                        <br />
+                        <br />
+
+                        <a class="nav-item" href="/Produtos/Consultar" style="color:black">
+                            <i class="fas fa-search"></i> <span>Consultar</span>
+                        </a>
+
+                    </div>
+                </div>
+                @*__________________________________________NAV FORMATO DOS LIVROS ________________________________________*@
+                <div class="card-header" role="tab" id="formatoLivro" style="background-color:#5579b6">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#formatoLivros" aria-expanded="true"
+                       aria-controls="formatoLivros" style="color:#FFFFFF">
+                        <h6 class="mb-0">
+                            FORMATO DOS LIVROS <i class="fas fa-angle-down rotate-icon"></i>
+                        </h6>
+                    </a>
+                </div>
+
+                <div id="formatoLivros" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
 
                     <div class="card-body">
                         <a class="nav-item" href="/Produtos/Cadastrar" style="color:black">
@@ -200,13 +310,26 @@
                         <a class="nav-item" href="/Relatorios/Clientes" style="color:black">
                             <i class="far fa-file-alt"></i> <span>Clientes</span>
                         </a>
-
+                        <br />
+                        <br />
+                        @*__________________________________________RELATORIOS LIVROS________________________________________*@
+                        <a class="nav-item" href="/Relatorios/ProdutoEstoque" style="color:black">
+                            <i class="far fa-file-alt"></i> <span>Livors</span>
+                        </a>
+                        <br />
+                        <br />
+                        @*__________________________________________RELATORIOS PRODUTOS________________________________________*@
+                        <a class="nav-item" href="/Relatorios/ProdutoEstoque" style="color:black">
+                            <i class="far fa-file-alt"></i> <span>Produtos</span>
+                        </a>
                         <br />
                         <br />
                         @*__________________________________________RELATORIOS PRODUTOS________________________________________*@
                         <a class="nav-item" href="/Relatorios/ProdutoEstoque" style="color:black">
                             <i class="far fa-file-alt"></i> <span>Produto / Estoque</span>
                         </a>
+                        <br />
+                        <br />
 
                         <br />
 

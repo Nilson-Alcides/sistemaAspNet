@@ -142,6 +142,14 @@ namespace ModeloDLL
         {
             try
             {
+                string strInsertTel = "DELETE from telefone ";
+                strInsertTel += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
+                db.ExecutaComando(strInsertTel);
+
+                string strInsertEnd = "DELETE from endereco ";
+                strInsertEnd += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
+                db.ExecutaComando(strInsertEnd);
+
                 string strInsert = "DELETE from cliente ";
                 strInsert += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
                 db.ExecutaComando(strInsert);
