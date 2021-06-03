@@ -121,6 +121,34 @@ namespace ModeloDLL
             }
 
         }
+        // EXCLUIR
+        public void Delete(Funcionario funcionario)
+        {
+            try
+            {
+                string strInsertTel = "DELETE from telefone ";
+                strInsertTel += string.Format(" WHERE idFunc = '{0}' ", funcionario.idFunc);
+                db.ExecutaComando(strInsertTel);
+
+                string strInsertEnd = "DELETE from endereco ";
+                strInsertEnd += string.Format(" WHERE idFunc = '{0}' ", funcionario.idFunc);
+                db.ExecutaComando(strInsertEnd);
+
+                string strInsert = "DELETE from funcionario ";
+                strInsert += string.Format(" WHERE idFunc = '{0}' ", funcionario.idFunc);
+                db.ExecutaComando(strInsert);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar EXCLUIR" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em EXCLUIR cliente" + ex.Message);
+            }
+        }
 
     }
 }

@@ -255,6 +255,7 @@
     <Content Include="Views\Funcionarios\AtualizarFuncionario.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Clientes\AtualizarCliente.cshtml" />
+    <Content Include="Views\Funcionarios\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

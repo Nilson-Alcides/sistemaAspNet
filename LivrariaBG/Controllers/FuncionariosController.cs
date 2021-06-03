@@ -106,5 +106,25 @@ namespace LivrariaBG.Controllers
             }
 
         }
+        //Deletar cliente
+        public ActionResult Delete(int id)
+        {
+            Funcionario cliente = new Funcionario { idFunc = id };
+
+            var metodoFuncionario = new FuncionarioDAO();
+            return View(SelecionaFuncionario(metodoFuncionario.SelectId(id)).FirstOrDefault());
+
+        }
+        //Deletar cliente
+        [HttpPost, ActionName("Delete")]
+        public ActionResult ConfirmaDelete(int id)
+        {
+            Funcionario funcionario = new Funcionario();
+            funcionario.idFunc = id;
+            var metodoFuncionario = new FuncionarioDAO();
+            metodoFuncionario.Delete(funcionario);
+
+            return RedirectToAction("Funcionarios");
+        }
     }
 }

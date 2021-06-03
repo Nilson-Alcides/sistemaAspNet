@@ -1,0 +1,102 @@
+﻿@model Dominios.Funcionario
+
+@{
+    ViewBag.Title = "Delete";
+}
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Confirmaçõa de exclusão do Funcionário</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="list-home" class="row">
+            <div class="col-4">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.idFunc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.idFunc)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.nomeFunc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.nomeFunc)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.cpfFunc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.cpfFunc)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.emailFunc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.emailFunc)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.cargo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.cargo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.senhaFunc)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.senhaFunc)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.nivelAcesso)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.nivelAcesso)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Excluir" class="btn btn-primary" /> |
+
+                        <a class="btn btn-primary " href="/Funcionarios/Funcionarios/" role="button">
+                            Cancelar
+                        </a>
+                    </div>
+
+                }
+            </div>
+    
+        </div>
+    </div>
+
+</section>
+
+
+
