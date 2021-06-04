@@ -102,7 +102,13 @@ namespace LivrariaBG.Controllers
         //    }
         //}
 
+        //Seleciona Cliente por ID       
+        public ActionResult ConsultarCategoriaId(int id)
+        {
+            var metodoCategoriaId = new CategoriaDAO();
+            return View(SelecionaCategoria(metodoCategoriaId.SelectId(id)).FirstOrDefault());
 
+        }
         private List<Categoria> SelecionaCategoria(MySqlDataReader retorno)
         {
             var categorias = new List<Categoria>();

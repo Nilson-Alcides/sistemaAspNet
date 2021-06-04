@@ -57,6 +57,25 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em selecionar categoria" + ex.Message);
             }
         }
+        //SELECIONAR CLIENTE POR ID
+        public MySqlDataReader SelectId(int idCategoria)
+        {
+            try
+            {
+                string strString = string.Format("select * From categoria where idCategoria = {0}; ", idCategoria);
+                return db.RetornaComando(strString);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar categoria" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em selecionar categoria" + ex.Message);
+            }
+        }
 
     }
 }
