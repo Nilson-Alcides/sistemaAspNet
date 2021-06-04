@@ -254,6 +254,7 @@
     <Content Include="Views\Clientes\AtualizarCliente.cshtml" />
     <Content Include="Views\Funcionarios\Delete.cshtml" />
     <Content Include="Views\Categoria\Cadastrar.cshtml" />
+    <Content Include="Views\Categoria\ConsultarTodasCategorias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

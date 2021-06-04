@@ -1,5 +1,6 @@
 ﻿using Dominios;
 using ModeloDLL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,12 @@ namespace LivrariaBG.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        //Seleciona Todos categorias 
+        public ActionResult ConsultarTodasCategorias()
+        {
+            var metodoCategoria = new CategoriaDAO();
+            return View(SelecionaCategoria(metodoCategoria.Select()));
         }
 
         // GET: Categoria/Details/5
@@ -94,5 +101,24 @@ namespace LivrariaBG.Controllers
         //        return View();
         //    }
         //}
+
+
+        private List<Categoria> SelecionaCategoria(MySqlDataReader retorno)
+        {
+            var categorias = new List<Categoria>();
+
+            while (retorno.Read())
+            {
+                var TempCategoria = new Categoria()
+                {
+                    idCategoria = int.Parse(retorno["idCategoria"].ToString()),
+                    nomeCategoria = retorno["nomeCategoria"].ToString(),
+                    tipoCategoria = retorno["tipoProduto"].ToString(), 
+                };
+                categorias.Add(TempCategoria);
+            }
+            retorno.Close();
+            return categorias;
+        }
     }
 }

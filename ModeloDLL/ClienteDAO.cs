@@ -99,7 +99,7 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em selecionar cliente" + ex.Message);
             }
         }
-        //SELECIONAR TODOS CLIENTE
+        //SELECIONAR TODOS CLIENTE View 
         public MySqlDataReader SelectView()
         {
             try
