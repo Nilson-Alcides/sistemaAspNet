@@ -58,28 +58,46 @@ namespace LivrariaBG.Controllers
 
         }
 
-        // GET: Categoria/Edit/5
-        public ActionResult Edit(int id)
+        // Selecuina o cliente para atualizar
+        public ActionResult AtualizarCategoria(int id)
         {
-            return View();
+            try
+            {
+                Categoria categoria = new Categoria();
+                categoria.idCategoria = id;
+                var metodoCategoria = new CategoriaDAO();
+                return View(SelecionaCategoria(metodoCategoria.SelectId(id)).FirstOrDefault());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao listar Categoria" + ex.Message);
+            }
+
         }
-
-        // POST: Categoria/Edit/5
+        // Atualizar cliente
         [HttpPost]
-        //public ActionResult Edit(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
+        public ActionResult AtualizarCategoria(Categoria categoria)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var metodoCategoria = new CategoriaDAO();
+                    metodoCategoria.Update(categoria);
+                    return RedirectToAction("ConsultarTodasCategorias");
+                }
+                return View(categoria);
+            }
+            catch (Exception ex)
+            {
 
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao atualuzar categoria" + ex.Message);
+            }
 
+        }
         // GET: Categoria/Delete/5
         public ActionResult Delete(int id)
         {

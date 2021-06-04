@@ -256,6 +256,7 @@
     <Content Include="Views\Categoria\Cadastrar.cshtml" />
     <Content Include="Views\Categoria\ConsultarTodasCategorias.cshtml" />
     <Content Include="Views\Categoria\ConsultarCategoriaId.cshtml" />
+    <Content Include="Views\Categoria\AtualizarCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

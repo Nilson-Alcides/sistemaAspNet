@@ -57,7 +57,7 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em selecionar categoria" + ex.Message);
             }
         }
-        //SELECIONAR CLIENTE POR ID
+        //SELECIONAR CATEGORIA POR ID
         public MySqlDataReader SelectId(int idCategoria)
         {
             try
@@ -75,6 +75,30 @@ namespace ModeloDLL
 
                 throw new Exception("Erro na aplicação em selecionar categoria" + ex.Message);
             }
+        }
+        //UPDATE CATEGORIA
+        public void Update(Categoria categoria)
+        {
+            try
+            {
+                string strInsert = "UPDATE CATEGORIA SET ";
+                strInsert += string.Format("nomeCategoria = '{0}',", categoria.nomeCategoria);
+                strInsert += string.Format("tipoProduto = '{0}',", categoria.tipoCategoria);              
+                strInsert += string.Format(" where idCategoria = {0} ;", categoria.idCategoria);
+                db.ExecutaComando(strInsert);
+
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em atualizar categoria" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em atualizar categoria" + ex.Message);
+            }
+
         }
 
     }
