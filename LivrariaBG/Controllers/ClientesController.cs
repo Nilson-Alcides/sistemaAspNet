@@ -31,23 +31,6 @@ namespace LivrariaBG.Controllers
             return View(cliente);
 
         }
-        public ActionResult Create()
-        {
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Create(Cliente cliente)
-        {
-            if (ModelState.IsValid)
-            {
-                var metodoCliente = new ClienteDAO();
-                metodoCliente.Insert(cliente);
-                RedirectToAction("ConsultarTodosClientes");
-            }
-            return View(cliente);
-
-        }
         //Seleciona Todos Cliente 
         public ActionResult ConsultarTodosClientes()
         {
@@ -55,8 +38,7 @@ namespace LivrariaBG.Controllers
             return View(SelecionaCliente(metodoCliente.SelectView()));
         }
 
-        //Seleciona Cliente por ID
-       
+        //Seleciona Cliente por ID       
         public ActionResult ConsultarClientesId(int id)
         {
             var metodoClienteId = new ClienteDAO();
@@ -86,13 +68,6 @@ namespace LivrariaBG.Controllers
             retorno.Close();
             return clientes;
         }
-
-        public ActionResult Consultar()
-        {
-            var metodoUsuario = new UsuarioDAO();
-            return View(SelecionaUsiario(metodoUsuario.Select()));
-        }
-
         //Deletar cliente
         public ActionResult Delete(int id)
         {
@@ -106,14 +81,16 @@ namespace LivrariaBG.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult ConfirmaDelete(int id)
         {
-            Cliente cliente = new Cliente();
+            
+             DialogResult Resposta = MessageBox.Show("Tem certeza que deseja  excluir este Clinete ", "Excluir Clinete ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resposta == DialogResult.Yes) { 
+                Cliente cliente = new Cliente();
             cliente.idCliente = id;
             var metodoUsuario = new ClienteDAO();
             metodoUsuario.Delete(cliente);
-
+            }
             return RedirectToAction("ConsultarTodosClientes");
         }
-
         private List<Usuario> SelecionaUsiario(MySqlDataReader retorno)
         {
             var usuarios = new List<Usuario>();

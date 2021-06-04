@@ -10,7 +10,7 @@ namespace Dominios
     public class Cliente
     {      
         
-        [Display(Name = "Código ", Description = "Codigo.")]
+        [Display(Name = "Código ", Description = "Codigo.")] 
         public int idCliente { get; set; }
 
         [Display(Name = "Nome ", Description = "Nome e Sobrenome.")]

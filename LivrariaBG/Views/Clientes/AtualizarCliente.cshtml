@@ -12,7 +12,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container" id="cadastrarFunc">
+    <div class="container" id="atualizarFunc">
         <form action="" method="POST">
             @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
             <div class="form-row">
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.nomeCliente, htmlAttributes: new { @class = "control-label col-md-6" })
+                    @Html.LabelFor(model => model.nomeCliente, htmlAttributes: new { @class = "control-label col-md-4" })
                     @Html.EditorFor(model => model.nomeCliente, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.nomeCliente, "", new { @class = "text-danger" })
                 </div>
@@ -42,14 +42,14 @@
 
             @*__________________________________________INICIO 2º LINHA COM EMAIL____________________________________________*@
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.emailCliente, htmlAttributes: new { @class = "control-label col-md-6" })
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(model => model.emailCliente, htmlAttributes: new { @class = "control-label col-md-5" })
                     @Html.EditorFor(model => model.emailCliente, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.emailCliente, "", new { @class = "text-danger" })
                     <div class="invalid-feedback"></div>
                 </div>
-                <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.dataNascCliente, htmlAttributes: new { @class = "control-label col-md-4" })                        <
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(model => model.dataNascCliente, htmlAttributes: new { @class = "control-label col-md-5" })                        <
                     @Html.EditorFor(model => model.dataNascCliente, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.dataNascCliente, "", new { @class = "text-danger" })
                     <div class="invalid-feedback"></div>
@@ -91,7 +91,7 @@
         </div>
         @*__________________________________________FIM TELEFONE______________________________________________________*@
 
-            @*__________________________________________INICIO ENDEREÇO LINHA 1___________________________________________*@
+        @*__________________________________________INICIO ENDEREÇO LINHA 1___________________________________________*@
             @*
         <div class="form-row">
             <div class="form-group col-md-5">
@@ -169,7 +169,7 @@
 
                         <a class="btn btn-primary " href="/Clientes/ConsultarTodosClientes/" role="button">
                             Cancelar
-                        </a>
+                        </a>                       
                     </div>
 
                 </div>
