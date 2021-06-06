@@ -83,7 +83,7 @@ namespace ModeloDLL
             {
                 string strInsert = "UPDATE CATEGORIA SET ";
                 strInsert += string.Format("nomeCategoria = '{0}',", categoria.nomeCategoria);
-                strInsert += string.Format("tipoProduto = '{0}',", categoria.tipoCategoria);              
+                strInsert += string.Format("tipoProduto = '{0}'", categoria.tipoCategoria);              
                 strInsert += string.Format(" where idCategoria = {0} ;", categoria.idCategoria);
                 db.ExecutaComando(strInsert);
 
@@ -99,6 +99,26 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em atualizar categoria" + ex.Message);
             }
 
+        }
+        public void Delete(Categoria categoria)
+        {
+            try
+            {               
+                string strInsert = "DELETE from Categoria ";
+                strInsert += string.Format(" WHERE idCategoria = '{0}' ", categoria.idCategoria);
+                db.ExecutaComando(strInsert);
+               
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar EXCLUIR" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em EXCLUIR Categoria" + ex.Message);
+            }
         }
 
     }

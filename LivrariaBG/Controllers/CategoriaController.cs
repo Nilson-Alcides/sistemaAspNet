@@ -30,7 +30,7 @@ namespace LivrariaBG.Controllers
             return View();
         }
 
-        // GET: Clientes
+        // GET: categoria
         public ActionResult Cadastrar()
         {
 
@@ -46,7 +46,7 @@ namespace LivrariaBG.Controllers
                     var metodoCategoria = new CategoriaDAO();
                     metodoCategoria.Insert(categoria);
                     MessageBox.Show("Categoria cadastrada com successo", "cadastrado com successo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return RedirectToAction("ConsultarTodosClientes");
+                    return RedirectToAction("ConsultarTodasCategorias");
                 }
                 return View(categoria);
             }
@@ -58,7 +58,7 @@ namespace LivrariaBG.Controllers
 
         }
 
-        // Selecuina o cliente para atualizar
+        // Selecuina o categoria para atualizar
         public ActionResult AtualizarCategoria(int id)
         {
             try
@@ -76,7 +76,7 @@ namespace LivrariaBG.Controllers
             }
 
         }
-        // Atualizar cliente
+        // Atualizar categoria
         [HttpPost]
         public ActionResult AtualizarCategoria(Categoria categoria)
         {
@@ -98,27 +98,30 @@ namespace LivrariaBG.Controllers
             }
 
         }
-        // GET: Categoria/Delete/5
+        //Deletar categoria
         public ActionResult Delete(int id)
         {
-            return View();
+            Categoria categoria = new Categoria { idCategoria = id };
+
+            var metodCategoria = new CategoriaDAO();
+            return View(SelecionaCategoria(metodCategoria.SelectId(id)).FirstOrDefault());
+
         }
+        //Deletar Categoria
+        [HttpPost, ActionName("Delete")]
+        public ActionResult ConfirmaDelete(int id)
+        {
 
-        // POST: Categoria/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+            DialogResult Resposta = MessageBox.Show("Tem certeza que deseja  excluir este Clinete ", "Excluir Categoria ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resposta == DialogResult.Yes)
+            {
+                Categoria categoria = new Categoria();
+                categoria.idCategoria = id;
+                var metodocategoria = new CategoriaDAO();
+                metodocategoria.Delete(categoria);
+            }
+            return RedirectToAction("ConsultarTodasCategorias");
+        }
 
         //Seleciona Cliente por ID       
         public ActionResult ConsultarCategoriaId(int id)
