@@ -12,24 +12,14 @@ namespace LivrariaBG.Controllers
 {
     public class CategoriaController : Controller
     {
-        // GET: Categoria
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
         //Seleciona Todos categorias 
         public ActionResult ConsultarTodasCategorias()
         {
             var metodoCategoria = new CategoriaDAO();
-            return View(SelecionaCategoria(metodoCategoria.Select()));
+            return View(SelecionaCategoria(metodoCategoria.Select())); 
         }
-
-        // GET: Categoria/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
+       
         // GET: categoria
         public ActionResult Cadastrar()
         {
@@ -58,7 +48,7 @@ namespace LivrariaBG.Controllers
 
         }
 
-        // Selecuina o categoria para atualizar
+        // Seleciona o categoria para atualizar
         public ActionResult AtualizarCategoria(int id)
         {
             try
@@ -123,7 +113,7 @@ namespace LivrariaBG.Controllers
             return RedirectToAction("ConsultarTodasCategorias");
         }
 
-        //Seleciona Cliente por ID       
+        //Seleciona Detalhes categoria por ID       
         public ActionResult ConsultarCategoriaId(int id)
         {
             var metodoCategoriaId = new CategoriaDAO();

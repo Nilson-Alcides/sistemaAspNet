@@ -22,7 +22,7 @@ namespace ModeloDLL
             {
                 string strInsert = string.Format("INSERT INTO CATEGORIA(nomeCategoria, tipoProduto) " +
                    " values('{0}','{1}' ); SELECT LAST_INSERT_ID();",
-                       categoria.nomeCategoria, categoria.tipoCategoria );
+                       categoria.nomeCategoria, categoria.tipoCategoria ); 
                 retorno = db.RetornaDado(strInsert);
 
             }

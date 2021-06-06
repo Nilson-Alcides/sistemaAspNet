@@ -124,6 +124,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\EditoraController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\GerenciamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -258,6 +259,11 @@
     <Content Include="Views\Categoria\ConsultarCategoriaId.cshtml" />
     <Content Include="Views\Categoria\AtualizarCategoria.cshtml" />
     <Content Include="Views\Categoria\Delete.cshtml" />
+    <Content Include="Views\Editora\Cadastrar.cshtml" />
+    <Content Include="Views\Editora\ConsultarTodasEditoras.cshtml" />
+    <Content Include="Views\Editora\ConsultarEditoraId.cshtml" />
+    <Content Include="Views\Editora\AtualizarEditora.cshtml" />
+    <Content Include="Views\Editora\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
