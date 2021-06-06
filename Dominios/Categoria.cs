@@ -19,6 +19,7 @@ namespace Dominios
         [Display(Name = "Tipo ", Description = "Tipo Produto")]
         [Required(ErrorMessage = "O Tipo Produto é obrigatório.")]
         public string tipoCategoria { get; set; }
+       
 
     }
 }

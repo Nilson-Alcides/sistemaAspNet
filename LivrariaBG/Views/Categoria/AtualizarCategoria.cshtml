@@ -1,51 +1,66 @@
 ﻿@model Dominios.Categoria
 
-@{
-    ViewBag.Title = "AtualizarCategoria";
-}
+<section class="layout-content">
 
-<h2>AtualizarCategoria</h2>
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Detalhes do cliente</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Categoria</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.idCategoria, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.idCategoria, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idCategoria, "", new { @class = "text-danger" })
+    <div class="container">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.idCategoria, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.idCategoria, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.nomeCategoria, htmlAttributes: new { @class = "control-label col-md-5" })
+                        @Html.EditorFor(model => model.nomeCategoria, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nomeCategoria, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        @Html.LabelFor(model => model.tipoCategoria, htmlAttributes: new { @class = "control-label col-md-4" })
+                        @Html.EditorFor(model => model.tipoCategoria, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.tipoCategoria, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
             </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+
+            @*__________________________________________BOTÔES______________________________________________________*@
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Salvar" class="btn btn-primary" /> |
+            <a class="btn btn-primary " href="/Categoria/Cadastrar/" role="button">
+                Novo
+            </a> |
+            <a class="btn btn-primary " href="/Categoria/ConsultarTodasCategorias/" role="button">
+                Voltar
+            </a>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nomeCategoria, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nomeCategoria, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nomeCategoria, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.tipoCategoria, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tipoCategoria, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tipoCategoria, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+        </form>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+</section>
+
