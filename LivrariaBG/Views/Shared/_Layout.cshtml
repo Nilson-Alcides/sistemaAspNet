@@ -46,7 +46,7 @@
                     @if (Session["usuarioLogado"] != null)
                     {
 
-                        <a class="nav-link2 sizet" @Html.ActionLink(@Session["usuarioLogado"].ToString(), "Login", "Login/Logout")>  <span></span></a>
+                        <a class="nav-link2 sizet" @Html.ActionLink(@Session["usuarioLogado"].ToString(), "Login", "Login")> <span></span></a>
 
                         <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair </span></a>
 

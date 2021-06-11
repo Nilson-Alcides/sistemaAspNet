@@ -40,6 +40,7 @@ namespace LivrariaBG.Controllers
                 FormsAuthentication.SetAuthCookie(u.emailFunc, false);
                 Session["usuarioLogado"] = u.emailFunc.ToString();
                 Session["SenhaLogado"] = u.senhaFunc.ToString();
+                
 
                 // direciona para a pagina index
                 return RedirectToAction("Index", "Home");
