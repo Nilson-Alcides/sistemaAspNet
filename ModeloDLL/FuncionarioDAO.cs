@@ -74,6 +74,40 @@ namespace ModeloDLL
             }
 
         }
+        public Funcionario TestarUsuario(Funcionario user)
+        {
+            string strInsert = "SELECT * FROM funcionario";
+            strInsert += string.Format(" WHERE ");
+            strInsert += string.Format("emailFunc = '{0}' ", user.emailFunc);
+            strInsert += string.Format(" AND ");
+            strInsert += string.Format("senhaFunc = '{0}'; ", user.senhaFunc);
+
+
+            MySqlDataReader teste;
+
+            teste = db.RetornaComando(strInsert);
+
+            if (teste.HasRows)
+            {
+                while (teste.Read())
+                {
+                    Funcionario dto = new Funcionario();
+                    {
+                        dto.emailFunc = Convert.ToString(teste["emailFunc"]);
+                        dto.senhaFunc = Convert.ToString(teste["senhaFunc"]);
+                    }
+                }
+            }
+
+            else
+            {
+                user.emailFunc = null;
+                user.senhaFunc = null;
+            }
+            return user;
+
+        }
+
         //Seleciona funcionario pro ID
         public MySqlDataReader SelectId(int id)
         {
@@ -149,6 +183,8 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em EXCLUIR cliente" + ex.Message);
             }
         }
+
+       
 
     }
 }

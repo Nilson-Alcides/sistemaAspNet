@@ -42,25 +42,50 @@
                     <a class="nav-link2 sizet" href="/MeusDados/MeusDados"> <i class="fas fa-user-circle sizet"></i> <span>Meus Dados</span></a>
                 </div>
                 @*__________________________________________NAV LOGIN ________________________________________*@
-                <div class="nav nav-pills">
-                    <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair</span></a>
-                </div>
+            <div class="nav nav-pills">
+                @if (Session["usuarioLogado"] != null)
+                {
+
+                    <a class="nav-link2 sizet" @Html.ActionLink(@Session["usuarioLogado"].ToString(), "Login", "Login/Logout")>  <span></span></a>
+                    
+                    <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair </span></a>
+
+
+
+                    <div class="navbar-collapse collapse">
+
+                        <ul class="nav navbar-nav navbar-right">
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Logout", "Login", " Login/Logout")</li>
+                    </ul>
+                }
+
+
+
+
+
+            </div>
             </div>
         </nav>
     </header>
     @*__________________________________________NAV HOME ________________________________________*@
-    <div class="layout-main">
+<div class="layout-main">
 
-        <aside>
-            <nav class="sidebar sidebar-open">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link " href="/Home/Index">
-                            <i class="fas fa-home"></i> <span>Home</span>
-                        </a>
-                    </li>
-                </ul>
-                @*__________________________________________NAV VENDAS ________________________________________*@
+    <aside>
+        <nav class="sidebar sidebar-open">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link " href="/Home/Index">
+                        <i class="fas fa-home"></i> <span>Home</span>
+                    </a>
+                </li>
+            </ul>
+            @*__________________________________________NAV VENDAS ________________________________________*@
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
                 <div class="card-header" role="tab" id="venda" style="background-color:#5579b6">
                     <a data-toggle="collapse" data-parent="#accordionEx" href="#vendas" aria-expanded="true"
@@ -336,36 +361,48 @@
                     </div>
                 </div>
             </div>
-            </nav>
-        </aside>
+        </nav>
+
+    </aside>
 
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
 
 
-        <script src="~/Scripts/jquery.js" /></script>
-        <script src="~/Scripts/jquery-mask.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="~/Scripts/js-bootstrap.js"></script>
-        <script type="text/javascript">
+    <script src="~/Scripts/jquery.js" /></script>
+    <script src="~/Scripts/jquery-mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="~/Scripts/js-bootstrap.js"></script>
+    <script type="text/javascript">
 
 
 
-            $(function () {
-                $('[data-toggle="popover"]').popover();
-            });
+        $(function () {
+            $('[data-toggle="popover"]').popover();
+        });
 
-            $(document).ready(function () {
-                $(".navbar-toggle").click(function () {
-                    $(".sidebar").toggleClass("sidebar-open");
-                })
-            });
+        $(document).ready(function () {
+            $(".navbar-toggle").click(function () {
+                $(".sidebar").toggleClass("sidebar-open");
+            })
+        });
 
-        </script>
+    </script>
 
+    @*Para não ficar em loop infinito pega a url e verifica se contem a palavra login para carregar dentro da pagina *@
+    @if (Session["usuarioLogado"] != null || HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath.Contains("Login"))
+    {
         @RenderBody()
+    }
+    else
+    {
+        Context.Response.Redirect("/Login/Login");
+    }
 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>

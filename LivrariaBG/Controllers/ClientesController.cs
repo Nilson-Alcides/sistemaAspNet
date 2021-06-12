@@ -59,7 +59,7 @@ namespace LivrariaBG.Controllers
                     emailCliente = retorno["emailCliente"].ToString(),
                     sexoCliente = retorno["sexoCliente"].ToString(),
                     dataNascCliente = DateTime.Parse(retorno["dataNascCliente"].ToString()),
-                    statusCliente = retorno["statusCliente"].ToString(),
+                    statusCliente = retorno["statusCliente"].ToString(),                   
                     
 
                 };

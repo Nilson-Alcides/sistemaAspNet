@@ -1,13 +1,12 @@
-﻿@{
-    Layout = null;
-}
+﻿@model Dominios.Funcionario
 
+@{ Layout = null; }
+@using (Html.BeginForm("VerificarFuncionario", "Login", FormMethod.Post))
+{
+    <!DOCTYPE html>
 
-
-<!DOCTYPE html>
-
-<html>
-<head>
+    <html>
+    <head>
     <title>Login Livraria BG</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,50 +14,55 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <!-- Bootstrap core CSS -->
+    @*Bootstrap core CSS*@
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
+    @*Custom styles for this template*@
     <link href="~/Content/styleLogin.css" rel="stylesheet" />
 
-</head>
-<body>
+    </head>
+    <body>
 
     <div class="container" id="container">
-        <div class="form-container">
-            <form action="#">
-                <img class="imagem" src="~/Imagens/Logo_Livraria.png" />
-                <input type="text" placeholder="Login" />
-                <input type="password" placeholder="Senha" />
-                <a href="#">Esqueci minha senha</a>
-                <a class="corbtn btn" href="/Home/Index" type="submit" name="btnEnviar" value="Login" role="button">
-                    <span>ENTRAR</span>
-                </a>
-            </form>
-        </div>
+    <div class="form-container">
+        <form action="#">
+            <img class="imagem" src="~/Imagens/Logo_Livraria.png" />
+           
+            <!--@Html.LabelFor(m => m.emailFunc)--> @*Criação do titulo do usuário*@
+
+            @Html.TextBoxFor(m => m.emailFunc, new { placeholder = "Email", @class = "form-input" }) @*Caixa de textto do usuario*@
+            @Html.ValidationMessageFor(m => m.emailFunc, "", new { placeholder = "Email", @class = "text-danger" })
+           
+
+            @Html.PasswordFor(m => m.senhaFunc, new { placeholder = "Senha", @class = "form-input" })
+            @Html.ValidationMessageFor(m => m.senhaFunc, "", new { @class = "text-danger" })
+
+
+            <input class="corbtn btn btn-sm" type="submit" name="btnEnviar" value="ENTRAR" role="button" />
+            <a href="#">Esqueci minha senha</a>
+            
+        </form>
     </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    </div>
+    @* Bootstrap core JavaScript
+    ==================================================
+    Placed at the end of the document so the pages load faster*@
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-
-
-        $(function () {
-            $('[data-toggle="popover"]').popover();
+    <script type="text/javascript">$(function () {
+        $('[data-toggle="popover"]').popover();
         });
 
         $(document).ready(function () {
-            $(".navbar-toggle").click(function () {
-                $(".sidebar").toggleClass("sidebar-open");
-            })
-        });
+        $(".navbar-toggle").click(function () {
+        $(".sidebar").toggleClass("sidebar-open");
+        })
+        });</script>
 
-    </script>
-
-</body>
-</html>
+    </body>
+    </html>
+     @section Scripts{
+     @Scripts.Render("~/Bundles/jdqueryval")}}
