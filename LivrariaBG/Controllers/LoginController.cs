@@ -24,7 +24,6 @@ namespace LivrariaBG.Controllers
             return View();
         }
 
-       
         [HttpPost]
         public ActionResult VerificarFuncionario(Funcionario u)
         {
@@ -40,7 +39,6 @@ namespace LivrariaBG.Controllers
                 FormsAuthentication.SetAuthCookie(u.emailFunc, false);
                 Session["usuarioLogado"] = u.emailFunc.ToString();
                 Session["SenhaLogado"] = u.senhaFunc.ToString();
-                
 
                 // direciona para a pagina index
                 return RedirectToAction("Index", "Home");
@@ -54,29 +52,33 @@ namespace LivrariaBG.Controllers
             }
 
         }
-        //private Funcionario SelecionaFuncionarioUser(MySqlDataReader retorno)
-        //{
-        //    var funcionarios = new Funcionario();
+        private Funcionario SelecionaFuncionarioUser(MySqlDataReader retorno)
+        {
+            var funcionarios = new Funcionario();
 
-        //    while (retorno.Read())
-        //    {
-        //        var TempFincionario = new Funcionario()
-        //        {
-        //            idFunc = int.Parse(retorno["idFunc"].ToString()),
-        //            nomeFunc = retorno["nomeFunc"].ToString(),
-        //            cpfFunc = retorno["cpfFunc"].ToString(),
-        //            emailFunc = retorno["emailFunc"].ToString(),
-        //            cargo = retorno["cargo"].ToString(),
-        //            senhaFunc = retorno["senhaFunc"].ToString(),
-        //            nivelAcesso = retorno["nivelAcesso"].ToString()
-        //        };
+            while (retorno.Read())
+            {
+                var TempFincionario = new Funcionario()
+                {
+                    idFunc = int.Parse(retorno["idFunc"].ToString()),
+                    nomeFunc = retorno["nomeFunc"].ToString(),
+                    cpfFunc = retorno["cpfFunc"].ToString(),
+                    emailFunc = retorno["emailFunc"].ToString(),
+                    cargo = retorno["cargo"].ToString(),
+                    senhaFunc = retorno["senhaFunc"].ToString(),
+                    nivelAcesso = retorno["nivelAcesso"].ToString()
+                };
                 
-        //    }
-        //    retorno.Close();
-        //    return funcionarios;
+            }
+            retorno.Close();
+            return funcionarios;
 
             
-        //}
+        }
 
     }
+    
+
+
+
 }

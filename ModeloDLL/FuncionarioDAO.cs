@@ -74,8 +74,6 @@ namespace ModeloDLL
             }
 
         }
-        
-        // Logim Usuario      
         public Funcionario TestarUsuario(Funcionario user)
         {
             string strInsert = "SELECT * FROM funcionario";
@@ -85,19 +83,18 @@ namespace ModeloDLL
             strInsert += string.Format("senhaFunc = '{0}'; ", user.senhaFunc);
 
 
-            MySqlDataReader leitor;
+            MySqlDataReader teste;
 
-            leitor = db.RetornaComando(strInsert);
+            teste = db.RetornaComando(strInsert);
 
-            if (leitor.HasRows)
+            if (teste.HasRows)
             {
-                while (leitor.Read())
+                while (teste.Read())
                 {
                     Funcionario dto = new Funcionario();
                     {
-                        dto.emailFunc = Convert.ToString(leitor["emailFunc"]);
-                        dto.senhaFunc = Convert.ToString(leitor["senhaFunc"]);
-                        
+                        dto.emailFunc = Convert.ToString(teste["emailFunc"]);
+                        dto.senhaFunc = Convert.ToString(teste["senhaFunc"]);
                     }
                 }
             }
