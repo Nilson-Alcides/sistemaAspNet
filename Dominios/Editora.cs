@@ -9,6 +9,7 @@ namespace Dominios
 {
     public class Editora
     {
+        [Key]
         [Display(Name = "Código ", Description = "Codigo.")]
         public int idEditora { get; set; }
 

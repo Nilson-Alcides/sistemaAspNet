@@ -1,22 +1,95 @@
-﻿<section class="layout-content">
+﻿@model Dominios.Produto
 
-    <nav class="navbar navbar-expand-md bg-light">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <i class="fas fa-caret-right"></i>
-                    <span>Cadastrar Produtos</span>
-                </li>
-            </ul>
-        </div>
-    </nav>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
-    <div class="container">
-        <div id="list-home" class="row">
-            <div class="col-4">
-                <h1>Inserir conteudo</h1>
+    <section class="layout-content">
+
+        <nav class="navbar navbar-expand-md bg-light">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <i class="fas fa-caret-right"></i>
+                        <span>Cadastrar Produtos</span>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </div>
+        </nav>
 
-</section>
+        <div class="container" id="cadastrarFunc">
+            <form action="" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.nomeProd, htmlAttributes: new { @class = "control-label col-md-5" })
+                        @Html.EditorFor(model => model.nomeProd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nomeProd, "", new { @class = "text-danger" })
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.marcaProd, htmlAttributes: new { @class = "control-label col-md-5" })
+
+                        @Html.EditorFor(model => model.marcaProd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.marcaProd, "", new { @class = "text-danger" })
+                        <div class="invalid-feedback"> </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        @Html.EditorFor(model => model.quantidade, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.quantidade, "", new { @class = "text-danger" })
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.preco, htmlAttributes: new { @class = "control-label col-md-5" })
+
+                        @Html.EditorFor(model => model.preco, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.preco, "", new { @class = "text-danger" })
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    @*<div class="form-group col-md-5">
+                        @Html.LabelFor(model => model.preco, htmlAttributes: new { @class = "control-label col-md-5" })
+
+                        @Html.EditorFor(model => model.preco, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.preco, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        @Html.LabelFor(model => model.preco, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                        @Html.EditorFor(model => model.preco, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.preco, "", new { @class = "text-danger" })
+                        <div class="invalid-feedback"></div>
+                    </div>*@
+
+                </div>
+                @*__________________________________________*@
+
+
+                <div class="form-group">
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Salvar" class="btn btn-primary" /> |
+
+                        <a class="btn btn-primary " href="/Produtos/Consultar/" role="button">
+                            Cancelar
+                        </a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+}
+<script>
+    $(document).ready(function () {
+        $("#preco").inputmask("mask", { "mask": "#.##9,99" }, { reverse: true });
+    });
+</script>
+
+
+@Scripts.Render("~/bundles/inputmask")

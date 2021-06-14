@@ -10,6 +10,7 @@ namespace Dominios
     public class Funcionario
     {
         // Id do funcionario
+        [Key]
         [Display(Name = "Código ", Description = "Codigo.")]
         public int idFunc { get; set; }
         

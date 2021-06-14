@@ -9,7 +9,7 @@ namespace Dominios
 {
     public class Cliente
     {      
-        
+        [Key]
         [Display(Name = "Código ", Description = "Codigo.")] 
         public int idCliente { get; set; }
 
