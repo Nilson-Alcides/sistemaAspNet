@@ -9,6 +9,7 @@ namespace Dominios
 {
     public class Endereco
     {
+        [Key]
         [Display(Name = "Código ", Description = "Codigo.")]
         public int idEndereco { get; set; }
               

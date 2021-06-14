@@ -264,6 +264,8 @@
     <Content Include="Views\Editora\ConsultarEditoraId.cshtml" />
     <Content Include="Views\Editora\AtualizarEditora.cshtml" />
     <Content Include="Views\Editora\Delete.cshtml" />
+    <Content Include="Views\Produtos\Create.cshtml" />
+    <Content Include="Views\Produtos\ConsultarTodosProdutos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
