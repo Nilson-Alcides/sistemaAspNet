@@ -56,8 +56,8 @@ namespace ModeloDLL
               //  strInsert += string.Format("cpfCliente = '{0}',", produto.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty));
                 strInsert += string.Format("marcaProd = '{0}',", produto.marcaProd);
                 strInsert += string.Format("quantidade = '{0}',", produto.quantidade);
-                strInsert += string.Format("dataNascCliente = '{0}' ", produto.preco);                
-                strInsert += string.Format(" where idProduto = {0} ;", produto.idProduto);
+                strInsert += string.Format("preco = '{0}' ", Convert.ToDecimal(produto.preco).ToString().Replace(",","."));                
+                strInsert += string.Format(" where idProduto = '{0}' ;", produto.idProduto);
                 db.ExecutaComando(strInsert);
 
             }

@@ -95,7 +95,7 @@ namespace LivrariaBG.Controllers
                 {
                     var metodoProduto = new ProdutoDAO();
                     metodoProduto.Update(produto);
-                    return RedirectToAction("ConsultarTodosProdutoss");
+                    return RedirectToAction("ConsultarTodosProdutos");
                 }
                 return View(produto);
             }
