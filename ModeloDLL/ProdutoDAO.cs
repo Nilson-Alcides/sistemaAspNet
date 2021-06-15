@@ -21,16 +21,16 @@ namespace ModeloDLL
         {
             Random numAleatorio = new Random();
 
-            CodProduto =  numAleatorio.Next(3,9).ToString();            
+            CodProduto =  numAleatorio.Next(100, 1000000).ToString();            
             string idProduto = "P";
             idProduto = idProduto + CodProduto;
-            int idCategoria = 9;
+            
 
             try
             {
-                string strInsert = string.Format("INSERT INTO PRODUTO(idProduto, idCategoria, nomeProd, marcaProd, quantidade, preco)" +
-                   " values('{0}',{1},'{2}','{3}','{4}', '{5}'); SELECT LAST_INSERT_ID();",
-                      idProduto, idCategoria, produto.nomeProd, produto.marcaProd, produto.quantidade, Convert.ToDecimal(produto.preco));
+                string strInsert = string.Format("INSERT INTO PRODUTO(idProduto,  nomeProd, marcaProd, quantidade, preco)" +
+                   " values('{0}','{1}','{2}','{3}', '{4}'); SELECT LAST_INSERT_ID();",
+                      idProduto, produto.nomeProd, produto.marcaProd, produto.quantidade, Convert.ToDecimal(produto.preco));
                 retorno = db.RetornaDado(strInsert);
                 
 
@@ -46,12 +46,39 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em cadastro Produto" + ex.Message);
             }
         }
+        //ATUALIZAR PRODUTO
+        public void Update(Produto produto)
+        {
+            try
+            {
+                string strInsert = "UPDATE Produto SET ";
+                strInsert += string.Format("nomeProd = '{0}',", produto.nomeProd);
+              //  strInsert += string.Format("cpfCliente = '{0}',", produto.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty));
+                strInsert += string.Format("marcaProd = '{0}',", produto.marcaProd);
+                strInsert += string.Format("quantidade = '{0}',", produto.quantidade);
+                strInsert += string.Format("dataNascCliente = '{0}' ", produto.preco);                
+                strInsert += string.Format(" where idProduto = {0} ;", produto.idProduto);
+                db.ExecutaComando(strInsert);
+
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em atualizar Produto" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em atualizar Produto" + ex.Message);
+            }
+
+        }
         //SELECT PRODUTOS
         public MySqlDataReader Select()
         {
             try
             {
-                string strString = "select * From produtos ";
+                string strString = "select * From produto ";
                 return db.RetornaComando(strString);
             }
             catch (MySqlException ex)
@@ -63,6 +90,25 @@ namespace ModeloDLL
             {
 
                 throw new Exception("Erro na aplicação em selecionar produto" + ex.Message);
+            }
+        }
+        //SELECIONAR PRODUTOD POR ID
+        public MySqlDataReader SelectId(string idProduto)
+        {
+            try
+            {
+                string strString = string.Format("select * From Produto where idProduto = '{0}'; ", idProduto);
+                return db.RetornaComando(strString);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar Produto" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em selecionar Produto" + ex.Message);
             }
         }
     }

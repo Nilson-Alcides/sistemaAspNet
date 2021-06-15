@@ -11,7 +11,8 @@ namespace Dominios
     {
         [Key]
         [Display(Name = "Código ", Description = "Codigo.")]
-        public int idProduto { get; set; }
+        public string idProduto { get; set; }
+        
 
         [Display(Name = "Nome ", Description = "Nome.")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
@@ -29,6 +30,6 @@ namespace Dominios
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public decimal preco { get; set; }
 
-        public Categoria categoria { get; set; }
+        
     }
 }

@@ -47,7 +47,7 @@ namespace LivrariaBG.Controllers
         }
         private List<Cliente> SelecionaCliente(MySqlDataReader retorno)
         {
-            var clientes = new List<Cliente>();
+            var clientes = new List<Cliente>(); 
 
             while (retorno.Read())
             {
