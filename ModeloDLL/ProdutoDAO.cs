@@ -29,8 +29,8 @@ namespace ModeloDLL
             try
             {
                 string strInsert = string.Format("INSERT INTO PRODUTO(idProduto,  nomeProd, marcaProd, quantidade, preco)" +
-                   " values('{0}','{1}','{2}','{3}', '{4}'); SELECT LAST_INSERT_ID();",
-                      idProduto, produto.nomeProd, produto.marcaProd, produto.quantidade, Convert.ToDecimal(produto.preco));
+                   " values('{0}','{1}','{2}',{3}, '{4}'); SELECT LAST_INSERT_ID();",
+                      idProduto, produto.nomeProd, produto.marcaProd, produto.quantidade, Convert.ToDecimal(produto.preco).ToString().Replace(",", "."));
                 retorno = db.RetornaDado(strInsert);
                 
 
@@ -109,6 +109,25 @@ namespace ModeloDLL
             {
 
                 throw new Exception("Erro na aplicação em selecionar Produto" + ex.Message);
+            }
+        }
+        public void Delete(Produto produto)
+        {
+            try
+            {                
+                string strInsert = "DELETE from Produto ";
+                strInsert += string.Format(" WHERE idProduto = '{0}' ", produto.idProduto);
+                db.ExecutaComando(strInsert);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar EXCLUIR" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em EXCLUIR cliente" + ex.Message);
             }
         }
     }
