@@ -1,0 +1,76 @@
+﻿@model Dominios.Produto
+
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Deletar produto</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.idProduto, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.idProduto, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.nomeProd, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.nomeProd, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.marcaProd, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.marcaProd, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+
+            </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.quantidade, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.quantidade, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.preco, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.preco, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+
+
+            </div>
+            @*_____________________________________________FIM 2º LINHA______________________________________________________*@
+            
+
+
+            @*__________________________________________BOTÔES______________________________________________________*@
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <input type="submit" value="Excluir" class="btn btn-primary" /> |
+                    <a class="btn btn-primary " href="/Produtos/Cadastrar/" role="button">
+                        Novo
+                    </a> |
+                    <a class="btn btn-primary " href="/Produtos/ConsultarTodosProdutos/" role="button">
+                        Voltar
+                    </a>
+                </div>
+            }
+        </form>
+    </div>
+</section>
+
+
