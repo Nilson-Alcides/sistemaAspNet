@@ -107,5 +107,29 @@ namespace LivrariaBG.Controllers
             }
 
         }
+        //Deletar Produto
+        public ActionResult Delete(string id)
+        {
+            Produto produto = new Produto { idProduto = id };
+
+            var metodoProduto = new ProdutoDAO();
+            return View(SelecionaProduto(metodoProduto.SelectId(id)).FirstOrDefault());
+
+        }
+        //Deletar Produto
+        [HttpPost, ActionName("Delete")]
+        public ActionResult ConfirmaDelete(string id)
+        {
+
+            DialogResult Resposta = MessageBox.Show("Tem certeza que deseja  excluir este Clinete ", "Excluir Clinete ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resposta == DialogResult.Yes)
+            {
+                Produto produto = new Produto();
+                produto.idProduto = id;
+                var metodoProduto = new ProdutoDAO();
+                metodoProduto.Delete(produto);
+            }
+            return RedirectToAction("ConsultarTodosProdutos");
+        }
     }
 }

@@ -268,6 +268,7 @@
     <Content Include="Views\Produtos\ConsultarTodosProdutos.cshtml" />
     <Content Include="Views\Produtos\ConsultarProdutoId.cshtml" />
     <Content Include="Views\Produtos\AtualizarProduto.cshtml" />
+    <Content Include="Views\Produtos\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
