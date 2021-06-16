@@ -12,7 +12,7 @@ namespace LivrariaBG.Controllers
 {
     public class EditoraController : Controller
     {
-        //Seleciona Todos categorias 
+        //Seleciona Todos editora 
         public ActionResult ConsultarTodasEditoras()
         {
             var metodoEditora = new EditoraDAO();
@@ -41,7 +41,7 @@ namespace LivrariaBG.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return new HttpStatusCodeResult(404, "Erro ao listar cliente" + ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao listar editora" + ex.Message);
             }
 
         }
@@ -60,7 +60,7 @@ namespace LivrariaBG.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return new HttpStatusCodeResult(404, "Erro ao listar Categoria" + ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao listar editora" + ex.Message);
             }
 
         }
@@ -112,7 +112,7 @@ namespace LivrariaBG.Controllers
             return RedirectToAction("ConsultarTodasEditoras");
         }
 
-        //Seleciona Detalhes categoria por ID       
+        //Seleciona Detalhes editora por ID       
         public ActionResult ConsultarEditoraId(int id)
         {
             var metodoEditoraId = new EditoraDAO();

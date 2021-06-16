@@ -1,0 +1,55 @@
+﻿@model Dominios.Autor
+
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Detalhes do autor</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.idAutor, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.idAutor, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.nomeAutor, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.nomeAutor, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+
+
+            </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+
+            @*__________________________________________BOTÔES______________________________________________________*@
+
+            @using (Html.BeginForm())
+            {
+@Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+
+                    <a class="btn btn-primary " href="/Autor/Cadastrar/" role="button">
+                        Novo
+                    </a> |
+                    <a class="btn btn-primary " href="/Autor/ConsultarTodosAutores/" role="button">
+                        Voltar
+                    </a>
+                </div>            }
+
+        </form>
+    </div>
+
+</section>

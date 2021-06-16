@@ -122,6 +122,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AutorController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EditoraController.cs" />
@@ -264,11 +265,13 @@
     <Content Include="Views\Editora\ConsultarEditoraId.cshtml" />
     <Content Include="Views\Editora\AtualizarEditora.cshtml" />
     <Content Include="Views\Editora\Delete.cshtml" />
-    <Content Include="Views\Produtos\Create.cshtml" />
     <Content Include="Views\Produtos\ConsultarTodosProdutos.cshtml" />
     <Content Include="Views\Produtos\ConsultarProdutoId.cshtml" />
     <Content Include="Views\Produtos\AtualizarProduto.cshtml" />
     <Content Include="Views\Produtos\Delete.cshtml" />
+    <Content Include="Views\Autor\ConsultarTodosAutores.cshtml" />
+    <Content Include="Views\Autor\Cadastrar.cshtml" />
+    <Content Include="Views\Autor\ConsultarAutorId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,48 @@
+﻿@model Dominios.Autor
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <section class="layout-content">
+
+                    <nav class="navbar navbar-expand-md bg-light">
+                        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <i class="fas fa-caret-right"></i>
+                                    <span>Cadastrar Autor</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <div class="container" id="CadastraEditorac">
+                        <form action="" method="POST">
+                            @*_____________________________________________INICIO 1º LINHA AUTOR ______________________________________________________*@
+                            <div class="form-row">
+                                <div class="form-group col-md-10">
+                                    @Html.LabelFor(model => model.nomeAutor, htmlAttributes: new { @class = "control-label col-md-10" })
+                                    @Html.EditorFor(model => model.nomeAutor, new { htmlAttributes = new { placeholder = "Informe um nome", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.nomeAutor, "", new { @class = "text-danger" })
+                                </div>                                
+                            </div>
+                            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+                        </form>
+                        <br />
+                        <br />
+                        @*_____________________________________________Botões da Editora ______________________________________________________*@
+                        <div class="form-group">
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Salvar" class="btn btn-primary" /> |
+
+                                <a class="btn btn-primary " href="/Autor/ConsultarTodosAutores/" role="button">
+                                    Cancelar
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+ }
