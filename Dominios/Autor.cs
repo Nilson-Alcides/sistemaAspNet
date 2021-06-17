@@ -13,7 +13,7 @@ namespace Dominios
         [Display(Name = "Código ", Description = "Codigo.")]
         public int idAutor { get; set; }
 
-        [Display(Name = "Editora", Description = "Editora")]
+        [Display(Name = "Autor", Description = "Autor")]
         [Required(ErrorMessage = "O nome é obrigatório.")]
         public string nomeAutor { get; set; }
     }

@@ -272,6 +272,8 @@
     <Content Include="Views\Autor\ConsultarTodosAutores.cshtml" />
     <Content Include="Views\Autor\Cadastrar.cshtml" />
     <Content Include="Views\Autor\ConsultarAutorId.cshtml" />
+    <Content Include="Views\Autor\AtualizarAutor.cshtml" />
+    <Content Include="Views\Autor\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
