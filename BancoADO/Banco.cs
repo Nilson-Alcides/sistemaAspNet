@@ -48,16 +48,15 @@ namespace BancoADO
         }
         public string RetornaDado(string StrQuery)
         {
-            string result;           
+            string result;
             var vComando = new MySqlCommand(StrQuery, conexao);
-            result = (string)vComando.ExecuteScalar().ToString();
-            if(result == null)
+            result = (string)vComando.ExecuteScalar();
+            if (result == null)
             {
-                result = ""; 
+                result = "";
             }
             return result;
         }
-
 
         public void Dispose()
         {

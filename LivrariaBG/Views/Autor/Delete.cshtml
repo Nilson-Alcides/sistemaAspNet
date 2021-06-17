@@ -1,4 +1,4 @@
-﻿@model Dominios.Editora
+﻿@model Dominios.Autor
 
 <section class="layout-content">
 
@@ -18,15 +18,15 @@
             @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
             <div class="form-row">
                 <div class="form-group col-md-2">
-                    @Html.LabelFor(model => model.idEditora, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.EditorFor(model => model.idEditora, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                    @Html.LabelFor(model => model.idAutor, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.idAutor, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
 
                 </div>
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.nomeEditora, htmlAttributes: new { @class = "control-label col-md-4" })
-                    @Html.EditorFor(model => model.nomeEditora, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                    @Html.LabelFor(model => model.nomeAutor, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.nomeAutor, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
 
-                </div>               
+                </div>
 
             </div>
             @*_____________________________________________FIM 1º LINHA______________________________________________________*@
@@ -39,19 +39,18 @@
                 @Html.AntiForgeryToken()
                 <div class="form-actions no-color">
                     <input type="submit" value="Excluir" class="btn btn-primary" /> |
-                    <a class="btn btn-primary " href="/Editora/Cadastrar/" role="button">
+                    <a class="btn btn-primary " href="/Autor/Cadastrar/" role="button">
                         Novo
                     </a> |
-                    <a class="btn btn-primary " href="/Editora/ConsultarTodasEditoras/" role="button">
+                    <a class="btn btn-primary " href="/Autor/ConsultarTodosAutores/" role="button">
                         Voltar
                     </a>
                 </div>
 
 
             }
-
         </form>
     </div>
-
 </section>
+
 
