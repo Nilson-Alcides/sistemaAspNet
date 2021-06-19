@@ -17,4 +17,6 @@ namespace Dominios
         [Required(ErrorMessage = "O nome é obrigatório.")]
         public string nomeAutor { get; set; }
     }
+
+
 }

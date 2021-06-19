@@ -163,23 +163,22 @@
                     </div>
 
                 </div>
-               
+
 
             </form>
         </div>
     </section>
 
-    <script>
-        $(document).ready(function () {
-            $("#cpfCliente").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
-            $("#telefone.numTel1").inputmask("mask", { "mask": "(99)99999-9999" });
-            $("#telefone.numTel2").inputmask("mask", { "mask": "(99)9999-9999" });
-            $("#telefone.numTel3").inputmask("mask", { "mask": "(99)9999-9999" });
-            $("#dataNascCliente").inputmask("mask", { "mask": "99/99/9999" });
-        });
-    </script>
-
-
-    @Scripts.Render("~/bundles/inputmask")
-
 }
+<script>
+    $(document).ready(function () {
+        $("#cpfCliente").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
+        $("#telefone.numTel1").inputmask("mask", { "mask": "(99)99999-9999" });
+        $("#telefone.numTel2").inputmask("mask", { "mask": "(99)9999-9999" });
+        $("#telefone.numTel3").inputmask("mask", { "mask": "(99)9999-9999" });
+        $("#dataNascCliente").inputmask("mask", { "mask": "99/99/9999" });
+    });
+</script>
+
+
+@Scripts.Render("~/bundles/inputmask")
