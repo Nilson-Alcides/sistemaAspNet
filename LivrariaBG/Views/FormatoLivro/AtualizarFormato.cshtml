@@ -1,0 +1,88 @@
+﻿@model Dominios.FormatoLivro
+
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Detalhes do formato do livro</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.idFormato, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.idFormato, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(model => model.descricao_for, htmlAttributes: new { @class = "control-label col-md-5" })
+                    @Html.EditorFor(model => model.descricao_for, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descricao_for, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+
+            @*__________________________________________BOTÔES______________________________________________________*@
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Salvar" class="btn btn-primary" /> |
+                    <a class="btn btn-primary " href="/FormatoLivro/Cadastrar/" role="button">
+                        Novo
+                    </a> |
+                    <a class="btn btn-primary " href="/FormatoLivro/ConsultarTodosformatos/" role="button">
+                        Voltar
+                    </a>
+                </div>
+
+            }
+
+        </form>
+    </div>
+
+</section>
+
+@*<h2>AtualizarFormato</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>FormatoLivro</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.idFormato)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.descricao_for, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.descricao_for, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.descricao_for, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

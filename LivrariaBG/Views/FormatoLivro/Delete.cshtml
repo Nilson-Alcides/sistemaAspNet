@@ -1,0 +1,57 @@
+﻿@model Dominios.FormatoLivro
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Tem certeza que quer excluir este item?</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.idFormato, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.idFormato, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.descricao_for, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.descricao_for, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+
+            </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+
+            @*__________________________________________BOTÔES______________________________________________________*@
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <input type="submit" value="Excluir" class="btn btn-primary" /> |
+                    <a class="btn btn-primary " href="/FormatoLivro/Cadastrar/" role="button">
+                        Novo
+                    </a> |
+                    <a class="btn btn-primary " href="/FormatoLivro/ConsultarTodosformatos/" role="button">
+                        Voltar
+                    </a>
+                </div>
+
+
+            }
+
+        </form>
+    </div>
+
+</section>
+
+

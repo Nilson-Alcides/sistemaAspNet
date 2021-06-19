@@ -126,6 +126,7 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EditoraController.cs" />
+    <Compile Include="Controllers\FormaLivroController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\GerenciamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -274,6 +275,11 @@
     <Content Include="Views\Autor\ConsultarAutorId.cshtml" />
     <Content Include="Views\Autor\AtualizarAutor.cshtml" />
     <Content Include="Views\Autor\Delete.cshtml" />
+    <Content Include="Views\FormatoLivro\ConsultarTodosformatos.cshtml" />
+    <Content Include="Views\FormatoLivro\Cadastrar.cshtml" />
+    <Content Include="Views\FormatoLivro\AtualizarFormato.cshtml" />
+    <Content Include="Views\FormatoLivro\ConsultarFormatoId.cshtml" />
+    <Content Include="Views\FormatoLivro\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

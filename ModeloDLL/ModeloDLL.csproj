@@ -46,6 +46,7 @@
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="EditoraDAO.cs" />
+    <Compile Include="FormatoLivroDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
