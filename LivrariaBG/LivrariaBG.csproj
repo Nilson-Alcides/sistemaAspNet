@@ -283,6 +283,8 @@
     <Content Include="Views\FormatoLivro\Delete.cshtml" />
     <Content Include="Views\Livro\Cadastrar.cshtml" />
     <Content Include="Views\Livro\ConsultarTodosLivros.cshtml" />
+    <Content Include="Views\Livro\ConsultarLivrosId.cshtml" />
+    <Content Include="Views\Livro\AtualizarLivro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

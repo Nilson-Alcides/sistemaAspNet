@@ -28,17 +28,65 @@ namespace LivrariaBG.Controllers
                 var metodoLivro = new LivroDAO();
                 metodoLivro.Insert(livro);
                 MessageBox.Show("Cliente cadastrado com successo", "cadastrado com successo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return RedirectToAction("ConsultarTodosProdutos");
+                return RedirectToAction("ConsultarTodosLivros");
             }
             return View(livro);
         }
-        //Seleciona Todos Produtos 
+        //Seleciona Todos Livros 
         public ActionResult ConsultarTodosLivros()
         {
             var metodoLivro = new LivroDAO();
             return View(SelecionaLivro(metodoLivro.Select()));
         }
+        //Seleciona livros por ID
+        public ActionResult ConsultarLivrosId(string id)
+        {
+            var metodoLivroId = new LivroDAO();
+            return View(SelecionaLivro(metodoLivroId.SelectId(id)).FirstOrDefault());
 
+        }
+        // Selecionar o Livro para atualizar
+        public ActionResult AtualizarLivro(string id)
+        {
+            try
+            {
+                Livro livro = new Livro();
+                livro.idLivro = id;
+                var metodoLivro = new LivroDAO();
+                return View(SelecionaLivro(metodoLivro.SelectId(id)).FirstOrDefault());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao listar Livro" + ex.Message);
+            }
+
+        }
+        // Atualizar Livro
+        [HttpPost]
+        public ActionResult AtualizarLivro(Livro livro)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var metodoLivro = new LivroDAO();
+                    metodoLivro.Update(livro);
+                    return RedirectToAction("ConsultarTodosLivros");
+                }
+                return View(livro);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                return new HttpStatusCodeResult(404, "Erro ao atualuzar Livro" + ex.Message);
+            }
+
+        }
+
+        //Lista de livros
         private List<Livro> SelecionaLivro(MySqlDataReader retorno)
         {
 

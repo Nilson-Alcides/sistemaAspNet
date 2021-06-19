@@ -9,7 +9,7 @@
                     <span>Lista de Livros</span>
                 </li>
             </ul>
-            <a class="btn btn-outline-primary" href="/Clientes/cadastrar" role="button">
+            <a class="btn btn-outline-primary" href="/Livro/cadastrar" role="button">
                 <span class="fas fa-user-plus" title="Cadastro" aria-hidden="true"></span>
                 <span>Cadastrar Livros</span>
             </a>
@@ -24,7 +24,7 @@
         </div>
         <div class="table-responsive">
 
-            <table id="ListaClientes" class="table table-striped table-hover table-sm">
+            <table id="ListaLivros" class="table table-striped table-hover table-sm">
 
                 <thead class="thead-dark">
 
@@ -35,7 +35,7 @@
                         <th>Valor</th>
                         <th>Estoque</th>
                         <th>Lançamento</th>
-                        <th>Descrição</th>                       
+                        <th>Descrição</th>
                         <th>Ação</th>
 
                     </tr>
@@ -67,8 +67,8 @@
                                         data-content="@livro.descricao">
                                     <span class="fas fa-eye" title="Visualizar" aria-hidden="true"></span>
                                 </button>
-                            </td>                         
-                                                        
+                            </td>
+
                             <td colspan="2">
                                 <a class="btn btn-info btn-sm" href="/Livro/ConsultarLivrosId/@livro.idLivro" role="button">
                                     <span class="fas fa-info-circle" title="Detalhes" aria-hidden="true"></span>
@@ -80,7 +80,7 @@
                                 <a class="btn btn-info btn-sm" href="/Livro/Delete/@livro.idLivro" role="button">
                                     <span class="fas fa-trash-alt" title="Excluir" aria-hidden="true"></span>
                                 </a>
-                               
+
                         </tr>
                     }
                 </tbody>
@@ -90,7 +90,6 @@
     </div>
 
 </section>
-
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
@@ -105,7 +104,7 @@
 <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
 <script>
     $(document).ready(function () {
-        var table = $('#ListaClientes').DataTable({
+        var table = $('#ListaLivros').DataTable({
             lengthChange: false,
             paging: false,
             ordering: false,
@@ -113,8 +112,7 @@
         });
 
         table.buttons().container()
-            .appendTo('#ListaClientes_wrapper_wrapper .col-md-6:eq(0)');
+            .appendTo('#ListaLivros_wrapper_wrapper .col-md-6:eq(0)');
     });
 </script>
-
 

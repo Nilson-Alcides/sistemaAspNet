@@ -67,5 +67,77 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em selecionar livro" + ex.Message);
             }
         }
+        //SELECIONAR LIVRO POR ID
+        public MySqlDataReader SelectId(string idLivro)
+        {
+            try
+            {
+                string strString = string.Format("select * From Livro where idLivro = '{0}'; ", idLivro);
+                return db.RetornaComando(strString);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar Livro" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em selecionar Livro" + ex.Message);
+            }
+        }
+        //ATUALIZAR LIVRO
+        public void Update(Livro livro)
+        {
+            try
+            {
+                string strInsert = "UPDATE Livro SET ";
+                strInsert += string.Format("titulo = '{0}',", livro.titulo);
+                //  strInsert += string.Format("cpfCliente = '{0}',", produto.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty));
+                strInsert += string.Format("isbn = '{0}',", livro.isbn);
+                strInsert += string.Format("capaLivro = '{0}',", livro.capaLivro);
+                strInsert += string.Format("descricao = '{0}',", livro.descricao);
+                strInsert += string.Format("IdAutor = {0},", Convert.ToInt32( livro.IdAutor));
+                strInsert += string.Format("IdEditora = {0},", Convert.ToInt32(livro.IdEditora));
+                strInsert += string.Format("IdFormato = {0},", Convert.ToInt32(livro.IdFormato));
+                strInsert += string.Format("IdCategoria = {0},", Convert.ToInt32(livro.IdCategoria));
+                strInsert += string.Format("estoque = '{0}',", livro.estoque);
+                strInsert += string.Format("paginas = '{0}',", livro.paginas);
+                strInsert += string.Format("dataLanc = '{0:u}',",livro.dataLanc);                
+                strInsert += string.Format("valorUnit = '{0}' ", Convert.ToDecimal(livro.valorUnit).ToString().Replace(",", "."));
+                strInsert += string.Format(" where idLivro = '{0}' ;", livro.idLivro);
+                db.ExecutaComando(strInsert);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em atualizar livro" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em atualizar Produto" + ex.Message);
+            }
+
+        }
+        public void Delete(Livro livro)
+        {
+            try
+            {
+                string strInsert = "DELETE from Livro ";
+                strInsert += string.Format(" WHERE idLivro = '{0}' ", livro.idLivro);
+                db.ExecutaComando(strInsert);
+            }
+            catch (MySqlException ex)
+            {
+
+                throw new Exception("Erro no banco em selecionar EXCLUIR" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro na aplicação em EXCLUIR cliente" + ex.Message);
+            }
+        }
     }
 }
