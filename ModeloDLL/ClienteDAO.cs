@@ -17,28 +17,35 @@ namespace ModeloDLL
         //INSERIR CLINETE
         public void Insert(Cliente cliente)
         {
-            
+
             try
             {
                 string strInsert = string.Format("INSERT INTO CLIENTE(nomeCliente, cpfCliente, emailCliente, sexoCliente," +
-                    "dataNascCliente, statusCliente) " +
-                   " values('{0}','{1}','{2}','{3}','{4}','{5}'); SELECT LAST_INSERT_ID();",
-                       cliente.nomeCliente, cliente.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty), cliente.emailCliente, cliente.sexoCliente,
-                       String.Format("{0:u}", cliente.dataNascCliente), cliente.statusCliente);
-                retorno =  db.RetornaDado(strInsert);
+                    "dataNascCliente, statusCliente, logradouro, numero," +
+                    "complemento, bairro, CEP, cidade, estado, UF, numTel1, numTel2, numTel3) " +
+                   " values('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}',{10},'{11}'," +
+                   " '{12}','{13}','{14}','{15}','{16}'); SELECT LAST_INSERT_ID();",
+                       cliente.nomeCliente, cliente.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty),
+                       cliente.emailCliente, cliente.sexoCliente, String.Format("{0:u}", cliente.dataNascCliente),
+                       cliente.statusCliente, cliente.logradouro, cliente.numero, cliente.complemento, cliente.bairro,
+                       cliente.CEP, cliente.cidade, cliente.estado, cliente.UF,
+                       cliente.numTel1,//.Replace("(", string.Empty).Replace(")", string.Empty).Replace("-", string.Empty), 
+                       cliente.numTel2,//.Replace("(", string.Empty).Replace(")", string.Empty).Replace("-", string.Empty), 
+                       cliente.numTel3);//.Replace("(", string.Empty).Replace(")", string.Empty).Replace("-", string.Empty);
+                retorno = db.RetornaDado(strInsert);
 
-                string strInsertTel = string.Format("INSERT INTO TELEFONE(idCliente, numTel1, numTel2, numTel3) " +
-                   " values({0},'{1}',{2},{3});",
-                       retorno, cliente.telefone.numTel1, cliente.telefone.numTel2, cliente.telefone.numTel3);
-                db.ExecutaComando(strInsertTel);
+                //string strInsertTel = string.Format("INSERT INTO TELEFONE(idCliente, numTel1, numTel2, numTel3) " +
+                //   " values({0},'{1}',{2},{3});",
+                //       retorno, cliente.telefone.numTel1, cliente.telefone.numTel2, cliente.telefone.numTel3);
+                //db.ExecutaComando(strInsertTel);
 
-                string strInsertEnd = string.Format("INSERT INTO ENDERECO(idCliente, logradouro, numero," +
-                    "complemento, bairro, CEP, cidade, estado, UF) " +                    
-                    " values({0},'{1}',{2},'{3}','{4}',{5},'{6}','{7}','{8}');",
-                      retorno, cliente.endereco.logradouro, cliente.endereco.numero,
-                      cliente.endereco.complemento, cliente.endereco.bairro, cliente.endereco.CEP, cliente.endereco.cidade,
-                      cliente.endereco.estado, cliente.endereco.UF);
-                db.ExecutaComando(strInsertEnd);
+                //string strInsertEnd = string.Format("INSERT INTO ENDERECO(idCliente, logradouro, numero," +
+                //    "complemento, bairro, CEP, cidade, estado, UF) " +
+                //    " values({0},'{1}',{2},'{3}','{4}',{5},'{6}','{7}','{8}');",
+                //      retorno, cliente.endereco.logradouro, cliente.endereco.numero,
+                //      cliente.endereco.complemento, cliente.endereco.bairro, cliente.endereco.CEP, cliente.endereco.cidade,
+                //      cliente.endereco.estado, cliente.endereco.UF);
+                //db.ExecutaComando(strInsertEnd);
 
             }
             catch (MySqlException ex)
@@ -63,7 +70,21 @@ namespace ModeloDLL
                 strInsert += string.Format("emailCliente = '{0}',", cliente.emailCliente);
                 strInsert += string.Format("sexoCliente = '{0}',", cliente.sexoCliente);
                 strInsert += string.Format("dataNascCliente = '{0:u}', ", cliente.dataNascCliente);
-                strInsert += string.Format("statusCliente = '{0}' ", cliente.statusCliente);
+                strInsert += string.Format("statusCliente = '{0}', ", cliente.statusCliente);
+
+                strInsert += string.Format("logradouro = '{0}', ", cliente.logradouro);
+                strInsert += string.Format("numero = '{0}', ", cliente.numero);
+                strInsert += string.Format("complemento = '{0}', ", cliente.complemento);
+                strInsert += string.Format("bairro = '{0}', ", cliente.bairro);
+                strInsert += string.Format("CEP = '{0}', ", cliente.CEP);
+                strInsert += string.Format("cidade = '{0}', ", cliente.cidade);
+                strInsert += string.Format("estado = '{0}', ", cliente.estado);
+                strInsert += string.Format("UF = '{0}', ", cliente.UF);
+
+                strInsert += string.Format("numTel1 = '{0}', ",cliente.numTel1);
+                strInsert += string.Format("numTel2 = '{0}',", cliente.numTel2);
+                strInsert += string.Format("numTel3 = '{0}' ", cliente.numTel3);
+
                 strInsert += string.Format(" where idCliente = {0} ;", cliente.idCliente);
                 db.ExecutaComando(strInsert);
 
@@ -142,13 +163,13 @@ namespace ModeloDLL
         {
             try
             {
-                string strInsertTel = "DELETE from telefone ";
-                strInsertTel += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
-                db.ExecutaComando(strInsertTel);
+                //string strInsertTel = "DELETE from telefone ";
+                //strInsertTel += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
+                //db.ExecutaComando(strInsertTel);
 
-                string strInsertEnd = "DELETE from endereco ";
-                strInsertEnd += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
-                db.ExecutaComando(strInsertEnd);
+                //string strInsertEnd = "DELETE from endereco ";
+                //strInsertEnd += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);
+                //db.ExecutaComando(strInsertEnd);
 
                 string strInsert = "DELETE from cliente ";
                 strInsert += string.Format(" WHERE idCliente = '{0}' ", cliente.idCliente);

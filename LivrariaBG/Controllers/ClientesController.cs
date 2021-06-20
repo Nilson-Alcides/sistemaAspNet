@@ -35,7 +35,7 @@ namespace LivrariaBG.Controllers
         public ActionResult ConsultarTodosClientes()
         {
             var metodoCliente = new ClienteDAO();
-            return View(SelecionaCliente(metodoCliente.SelectView()));
+            return View(SelecionaCliente(metodoCliente.Select()));
         }
 
         //Seleciona Cliente por ID       
@@ -59,8 +59,20 @@ namespace LivrariaBG.Controllers
                     emailCliente = retorno["emailCliente"].ToString(),
                     sexoCliente = retorno["sexoCliente"].ToString(),
                     dataNascCliente = DateTime.Parse(retorno["dataNascCliente"].ToString()),
-                    statusCliente = retorno["statusCliente"].ToString(),                   
-                    
+                    statusCliente = retorno["statusCliente"].ToString(),
+
+                    logradouro = retorno["logradouro"].ToString(),
+                    numero = int.Parse(retorno["numero"].ToString()),
+                    complemento = retorno["complemento"].ToString(),
+                    CEP = retorno["CEP"].ToString(),
+                    bairro = retorno["bairro"].ToString(),
+                    cidade = retorno["cidade"].ToString(),
+                    estado = retorno["estado"].ToString(),
+                    UF = retorno["UF"].ToString(),
+
+                    numTel1 = retorno["numTel1"].ToString(),
+                    numTel2 = retorno["numTel2"].ToString(),
+                    numTel3 = retorno["numTel3"].ToString(),
 
                 };
                 clientes.Add(TempCliente);
