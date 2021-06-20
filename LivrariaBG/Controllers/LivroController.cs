@@ -27,7 +27,7 @@ namespace LivrariaBG.Controllers
             {
                 var metodoLivro = new LivroDAO();
                 metodoLivro.Insert(livro);
-                MessageBox.Show("Cliente cadastrado com successo", "cadastrado com successo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Livro cadastrado com successo", "cadastrado com successo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return RedirectToAction("ConsultarTodosLivros");
             }
             return View(livro);
@@ -116,24 +116,31 @@ namespace LivrariaBG.Controllers
             retorno.Close();
             return livros;
         }
-        //SELECIONAR CATEGORIA LISTA
-        private List<Categoria> SelecionaCategoria(MySqlDataReader retorno)
+        //Deletar Livro
+        public ActionResult Delete(string id)
         {
-            var categorias = new List<Categoria>();
+            Livro produto = new Livro { idLivro = id };
 
-            while (retorno.Read())
-            {
-                var TempCategoria = new Categoria()
-                {
-                    idCategoria = int.Parse(retorno["idCategoria"].ToString()),
-                    nomeCategoria = retorno["nomeCategoria"].ToString(),
-                    tipoCategoria = retorno["tipoProduto"].ToString(),
-                };
-                categorias.Add(TempCategoria);
-            }
-            retorno.Close();
-            return categorias;
+            var metodoLivro = new LivroDAO();
+            return View(SelecionaLivro(metodoLivro.SelectId(id)).FirstOrDefault());
+
         }
+        //Deletar Livro
+        [HttpPost, ActionName("Delete")]
+        public ActionResult ConfirmaDelete(string id)
+        {
+
+            DialogResult Resposta = MessageBox.Show("Tem certeza que deseja  excluir este Livro ", "Excluir Livro ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resposta == DialogResult.Yes)
+            {
+                Livro livro = new Livro();
+                livro.idLivro = id;
+                var metodoLivro = new LivroDAO();
+                metodoLivro.Delete(livro);
+            }
+            return RedirectToAction("ConsultarTodosLivros");
+        }
+        
     }
 }
 

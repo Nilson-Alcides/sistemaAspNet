@@ -15,6 +15,7 @@ namespace Dominios
 
         public int IdEditora { get; set; }
         public int IdAutor { get; set; }
+        public Categoria categoria { get; set; }
         public int IdCategoria { get; set; }
         public int IdFormato { get; set; }
 
