@@ -255,6 +255,7 @@
     <Content Include="Views\Funcionarios\FuncionariosPorId.cshtml" />
     <Content Include="Views\Funcionarios\AtualizarFuncionario.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml_old" />
     <Content Include="Views\Clientes\AtualizarCliente.cshtml" />
     <Content Include="Views\Funcionarios\Delete.cshtml" />
     <Content Include="Views\Categoria\Cadastrar.cshtml" />
