@@ -15,30 +15,33 @@ namespace ModeloDLL
         string retorno;
         //INSERIR FUNCIONARIO
         public void Insert(Funcionario funcionario)
-        {
-            
+        {            
             try
             {
                 string strInsert = string.Format("INSERT INTO FUNCIONARIO(nomeFunc, cpfFunc, emailFunc, cargo," +
-                    "senhaFunc, nivelAcesso) " +
-                   " values('{0}','{1}','{2}','{3}','{4}','{5}'); SELECT LAST_INSERT_ID();",
+                    " senhaFunc, nivelAcesso,logradouro, numero,complemento, bairro, CEP, cidade, estado, UF," +
+                    " numTel1, numTel2, numTel3) " +
+                    " values('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}',{10},'{11}'," +
+                    " '{12}','{13}','{14}','{15}','{16}'); SELECT LAST_INSERT_ID();",
                        funcionario.nomeFunc, funcionario.cpfFunc.Replace(".", string.Empty).Replace("-", string.Empty), funcionario.emailFunc, funcionario.cargo,
-                       funcionario.senhaFunc, funcionario.nivelAcesso);
+                       funcionario.senhaFunc, funcionario.nivelAcesso, funcionario.logradouro, funcionario.numero,
+                      funcionario.complemento, funcionario.bairro, funcionario.CEP, funcionario.cidade,
+                      funcionario.estado, funcionario.UF, funcionario.numTel1, funcionario.numTel2, funcionario.numTel3);
                 retorno = db.RetornaDado(strInsert);
 
 
-                string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, numTel1, numTel2, numTel3) " +
-                   " values({0},'{1}',{2},{3});",
-                       retorno, funcionario.telefone.numTel1, funcionario.telefone.numTel2, funcionario.telefone.numTel3);
-                db.ExecutaComando(strInsertTel);
+                //string strInsertTel = string.Format("INSERT INTO TELEFONE(idFunc, numTel1, numTel2, numTel3) " +
+                //   " values({0},'{1}',{2},{3});",
+                //       retorno, funcionario.telefone.numTel1, funcionario.telefone.numTel2, funcionario.telefone.numTel3);
+                //db.ExecutaComando(strInsertTel);
 
-                string strInsertEnd = string.Format("INSERT INTO ENDERECO(idFunc, logradouro, numero," +
-                    "complemento, bairro, CEP, cidade, estado, UF) " +
-                    " values({0},'{1}',{2},'{3}','{4}',{5},'{6}','{7}','{8}');",
-                      retorno, funcionario.endereco.logradouro, funcionario.endereco.numero,
-                      funcionario.endereco.complemento, funcionario.endereco.bairro, funcionario.endereco.CEP, funcionario.endereco.cidade,
-                      funcionario.endereco.estado, funcionario.endereco.UF);
-                db.ExecutaComando(strInsertEnd);
+                //string strInsertEnd = string.Format("INSERT INTO ENDERECO(idFunc, logradouro, numero," +
+                //    "complemento, bairro, CEP, cidade, estado, UF) " +
+                //    " values({0},'{1}',{2},'{3}','{4}',{5},'{6}','{7}','{8}');",
+                //      retorno, funcionario.endereco.logradouro, funcionario.endereco.numero,
+                //      funcionario.endereco.complemento, funcionario.endereco.bairro, funcionario.endereco.CEP, funcionario.endereco.cidade,
+                //      funcionario.endereco.estado, funcionario.endereco.UF);
+                //db.ExecutaComando(strInsertEnd);
 
             }
             catch (MySqlException ex)
@@ -138,7 +141,21 @@ namespace ModeloDLL
                 strInsert += string.Format("emailFunc = '{0}',", funcionario.emailFunc);
                 strInsert += string.Format("cargo = '{0}',", funcionario.cargo);                
                 strInsert += string.Format("senhaFunc = '{0}', ", funcionario.senhaFunc);
-                strInsert += string.Format("nivelAcesso = '{0}' ", funcionario.nivelAcesso);
+                strInsert += string.Format("nivelAcesso = '{0}', ", funcionario.nivelAcesso);
+
+                strInsert += string.Format("logradouro = '{0}', ", funcionario.logradouro);
+                strInsert += string.Format("numero = '{0}', ", funcionario.numero);
+                strInsert += string.Format("complemento = '{0}', ", funcionario.complemento);
+                strInsert += string.Format("bairro = '{0}', ", funcionario.bairro);
+                strInsert += string.Format("CEP = '{0}', ", funcionario.CEP);
+                strInsert += string.Format("cidade = '{0}', ", funcionario.cidade);
+                strInsert += string.Format("estado = '{0}', ", funcionario.estado);
+                strInsert += string.Format("UF = '{0}', ", funcionario.UF);
+
+                strInsert += string.Format("numTel1 = '{0}', ", funcionario.numTel1);
+                strInsert += string.Format("numTel2 = '{0}',", funcionario.numTel2);
+                strInsert += string.Format("numTel3 = '{0}' ", funcionario.numTel3);
+
                 strInsert += string.Format(" where idFunc = {0} ;", funcionario.idFunc);
                 db.ExecutaComando(strInsert);
 

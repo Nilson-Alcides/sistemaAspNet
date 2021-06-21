@@ -1,0 +1,125 @@
+﻿@model Dominios.Livro
+
+
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Detalhes do livro</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.idLivro, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.idLivro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-3">
+                    @Html.LabelFor(model => model.isbn, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.EditorFor(model => model.isbn, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(model => model.titulo, htmlAttributes: new { @class = "control-label col-md-5" })
+                    @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.valorUnit, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.valorUnit, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+            </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+            @*__________________________________________INICIO 2º LINHA____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.descricao, htmlAttributes: new { @class = "control-label col-md-6" })
+                    @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.capaLivro, htmlAttributes: new { @class = "control-label col-md-4" })                        <
+                    @Html.EditorFor(model => model.capaLivro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.paginas, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.paginas, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            @*__________________________________________FIM 2º LINHA__________________________________________________*@
+
+
+            @*__________________________________________INICIO 3º LINHA____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.estoque, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.estoque, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.autor, htmlAttributes: new { @class = "control-label col-md-2" })                        <
+                    @Html.EditorFor(model => model.autor, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.editora, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.editora, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.formato, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.formato, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.categoria, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.categoria, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.dataLanc, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.dataLanc, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+
+                </div>
+            </div>
+            @*__________________________________________FIM 3º LINHA__________________________________________________*@
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+
+                    <a class="btn btn-primary " href="/Livro/Cadastrar/" role="button">
+                        Novo
+                    </a> |
+                    <a class="btn btn-primary " href="/Livro/ConsultarTodosLivros/" role="button">
+                        Voltar
+                    </a>
+                </div>
+
+            }
+
+        </form>
+    </div>
+
+</section>
+
+
+

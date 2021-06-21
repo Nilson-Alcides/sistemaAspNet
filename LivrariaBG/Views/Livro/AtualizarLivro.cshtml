@@ -1,0 +1,147 @@
+﻿@model Dominios.Livro
+
+<section class="layout-content">
+
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <i class="fas fa-caret-right"></i>
+                    <span>Atulalizar Cliente</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" id="atualizarFunc">
+        <form action="" method="POST">
+            @*__________________________________________INICIO 1º LINHA COM MONE____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.idLivro, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.idLivro, new { htmlAttributes = new { @readonly = "readonly", @class = "form-control" } })
+                   
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.isbn, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.isbn, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isbn, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.titulo, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.valorUnit, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.valorUnit, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.valorUnit, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*_____________________________________________FIM 1º LINHA______________________________________________________*@
+
+            @*__________________________________________INICIO 2º LINHA COM EMAIL____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.descricao, htmlAttributes: new { @class = "control-label col-md-6" })
+                    @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.capaLivro, htmlAttributes: new { @class = "control-label col-md-4" })                        <
+                    @Html.EditorFor(model => model.capaLivro, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.capaLivro, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.paginas, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.paginas, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.paginas, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            @*__________________________________________FIM 2º LINHA__________________________________________________*@
+            @*__________________________________________INICIO 2º LINHA COM EMAIL____________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.estoque, htmlAttributes: new { @class = "control-label col-md-6" })
+                    @Html.EditorFor(model => model.estoque, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.estoque, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.descricao, htmlAttributes: new { @class = "control-label col-md-4" })                        <
+                    @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.dataLanc, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.dataLanc, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dataLanc, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            @*__________________________________________FIM 2º LINHA__________________________________________________*@
+            @*__________________________________________Categorias/editora/autor e formatos______________________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.autor, htmlAttributes: new { @class = "control-label col-md-4" })
+
+                    @Html.EditorFor(model => model.autor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.autor, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.editora, htmlAttributes: new { @class = "control-label col-md-4" })
+
+                    @Html.EditorFor(model => model.editora, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.editora, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.formato, htmlAttributes: new { @class = "control-label col-md-4" })
+
+                    @Html.EditorFor(model => model.formato, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.formato, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+            @*__________________________________________FIM TELEFONE______________________________________________________*@
+
+            @*__________________________________________INICIO ENDEREÇO LINHA 1___________________________________________*@
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    @Html.LabelFor(model => model.categoria, htmlAttributes: new { @class = "control-label col-md-5" })
+
+                    @Html.EditorFor(model => model.categoria, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.categoria, "", new { @class = "text-danger" })
+                    <div class="invalid-feedback"></div>
+                </div>
+
+
+            </div>
+            @*__________________________________________INICIO ENDEREÇO LINHA 2___________________________________________*@
+            <br />
+            <br />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Salvar" class="btn btn-primary" /> |
+                        <a class="btn btn-primary " href="/Livro/Cadastrar/" role="button">
+                            Novo
+                        </a> |
+                        <a class="btn btn-primary " href="/Livro/ConsultarTodosLivros/" role="button">
+                            Cancelar
+                        </a>
+                    </div>
+
+                </div>
+            }
+        </form>
+    </div>
+    @*__________________________________________ FIM ______________________________________________________*@
+
+</section>

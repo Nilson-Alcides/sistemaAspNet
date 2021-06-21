@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace Dominios
 {
-    public class Autor
+    public class FormatoLivro
     {
         [Key]
         [Display(Name = "Código ", Description = "Codigo.")]
-        public int idAutor { get; set; }
+        public int idFormato { get; set; }
 
-        [Display(Name = "Autor", Description = "Autor")]
+        [Display(Name = "Formato", Description = "Formato")]
         [Required(ErrorMessage = "O nome é obrigatório.")]
-        public string nomeAutor { get; set; }
+        public string descricao_for { get; set; }
     }
-
-
 }

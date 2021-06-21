@@ -126,9 +126,11 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EditoraController.cs" />
+    <Compile Include="Controllers\FormaLivroController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\GerenciamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MeusDadosController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
@@ -253,6 +255,7 @@
     <Content Include="Views\Funcionarios\FuncionariosPorId.cshtml" />
     <Content Include="Views\Funcionarios\AtualizarFuncionario.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml_old" />
     <Content Include="Views\Clientes\AtualizarCliente.cshtml" />
     <Content Include="Views\Funcionarios\Delete.cshtml" />
     <Content Include="Views\Categoria\Cadastrar.cshtml" />
@@ -274,6 +277,16 @@
     <Content Include="Views\Autor\ConsultarAutorId.cshtml" />
     <Content Include="Views\Autor\AtualizarAutor.cshtml" />
     <Content Include="Views\Autor\Delete.cshtml" />
+    <Content Include="Views\FormatoLivro\ConsultarTodosformatos.cshtml" />
+    <Content Include="Views\FormatoLivro\Cadastrar.cshtml" />
+    <Content Include="Views\FormatoLivro\AtualizarFormato.cshtml" />
+    <Content Include="Views\FormatoLivro\ConsultarFormatoId.cshtml" />
+    <Content Include="Views\FormatoLivro\Delete.cshtml" />
+    <Content Include="Views\Livro\Cadastrar.cshtml" />
+    <Content Include="Views\Livro\ConsultarTodosLivros.cshtml" />
+    <Content Include="Views\Livro\ConsultarLivrosId.cshtml" />
+    <Content Include="Views\Livro\AtualizarLivro.cshtml" />
+    <Content Include="Views\Livro\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

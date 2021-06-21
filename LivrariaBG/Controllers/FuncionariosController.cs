@@ -34,7 +34,20 @@ namespace LivrariaBG.Controllers
                     emailFunc = retorno["emailFunc"].ToString(),
                     cargo = retorno["cargo"].ToString(),
                     senhaFunc = retorno["senhaFunc"].ToString(),
-                    nivelAcesso = retorno["nivelAcesso"].ToString()                 
+                    nivelAcesso = retorno["nivelAcesso"].ToString(),
+
+                    logradouro = retorno["logradouro"].ToString(),
+                    numero = int.Parse(retorno["numero"].ToString()),
+                    complemento = retorno["complemento"].ToString(),
+                    CEP = retorno["CEP"].ToString(),
+                    bairro = retorno["bairro"].ToString(),
+                    cidade = retorno["cidade"].ToString(),
+                    estado = retorno["estado"].ToString(),
+                    UF = retorno["UF"].ToString(),
+
+                    numTel1 = retorno["numTel1"].ToString(),
+                    numTel2 = retorno["numTel2"].ToString(),
+                    numTel3 = retorno["numTel3"].ToString(),
                 };
                 funcionarios.Add(TempFincionario);
             }
