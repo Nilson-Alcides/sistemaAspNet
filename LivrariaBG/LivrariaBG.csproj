@@ -287,7 +287,6 @@
     <Content Include="Views\Livro\ConsultarLivrosId.cshtml" />
     <Content Include="Views\Livro\AtualizarLivro.cshtml" />
     <Content Include="Views\Livro\Delete.cshtml" />
-    <Content Include="Views\Livro\BuscaCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

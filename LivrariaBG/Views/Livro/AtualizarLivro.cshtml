@@ -86,24 +86,24 @@
             @*__________________________________________Categorias/editora/autor e formatos______________________________________________________*@
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.IdAutor, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.LabelFor(model => model.autor, htmlAttributes: new { @class = "control-label col-md-4" })
 
-                    @Html.EditorFor(model => model.IdAutor, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.IdAutor, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.autor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.autor, "", new { @class = "text-danger" })
                     <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.IdEditora, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.LabelFor(model => model.editora, htmlAttributes: new { @class = "control-label col-md-4" })
 
-                    @Html.EditorFor(model => model.IdEditora, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.IdEditora, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.editora, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.editora, "", new { @class = "text-danger" })
                     <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.IdFormato, htmlAttributes: new { @class = "control-label col-md-4" })
+                    @Html.LabelFor(model => model.formato, htmlAttributes: new { @class = "control-label col-md-4" })
 
-                    @Html.EditorFor(model => model.IdFormato, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.IdFormato, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.formato, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.formato, "", new { @class = "text-danger" })
                     <div class="invalid-feedback"></div>
                 </div>
             </div>
@@ -112,10 +112,10 @@
             @*__________________________________________INICIO ENDEREÇO LINHA 1___________________________________________*@
             <div class="form-row">
                 <div class="form-group col-md-5">
-                    @Html.LabelFor(model => model.IdCategoria, htmlAttributes: new { @class = "control-label col-md-5" })
+                    @Html.LabelFor(model => model.categoria, htmlAttributes: new { @class = "control-label col-md-5" })
 
-                    @Html.EditorFor(model => model.IdCategoria, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.IdCategoria, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.categoria, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.categoria, "", new { @class = "text-danger" })
                     <div class="invalid-feedback"></div>
                 </div>
 

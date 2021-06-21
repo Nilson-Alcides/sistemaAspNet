@@ -98,10 +98,10 @@ namespace LivrariaBG.Controllers
                 {
                     idLivro = retorno["idLivro"].ToString(),//0
                     isbn = retorno["isbn"].ToString(),//1
-                    IdAutor = int.Parse(retorno["IdAutor"].ToString()),//2
-                    IdEditora = int.Parse(retorno["IdEditora"].ToString()),//3
-                    IdFormato = int.Parse(retorno["IdFormato"].ToString()),//4
-                    IdCategoria = int.Parse(retorno["IdCategoria"].ToString()),//5
+                    autor = retorno["autor"].ToString(),//2
+                    editora = retorno["editora"].ToString(),//3
+                    formato = retorno["formato"].ToString(),//4
+                    categoria = retorno["categoria"].ToString(),//5
                     titulo = retorno["titulo"].ToString(),//6                    
                     descricao = retorno["descricao"].ToString(),//7
                     capaLivro = retorno["capaLivro"].ToString(),//8

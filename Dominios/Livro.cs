@@ -13,11 +13,21 @@ namespace Dominios
         [Display(Name = "Código ", Description = "Codigo.")]
         public string idLivro { get; set; }
 
-        public int IdEditora { get; set; }
-        public int IdAutor { get; set; }
-        public Categoria categoria { get; set; }
-        public int IdCategoria { get; set; }
-        public int IdFormato { get; set; }
+        [Display(Name = "Editora ", Description = "Editora.")]
+        [Required(ErrorMessage = "O campo é obrigatório.")]
+        public string editora { get; set; }
+
+        [Display(Name = "Autor ", Description = "Autor.")]
+        [Required(ErrorMessage = "O campo é obrigatório.")]
+        public string autor { get; set; }
+
+        [Display(Name = "Categoria ", Description = "Categoria.")]
+        [Required(ErrorMessage = "O campo é obrigatório.")]
+        public string categoria { get; set; }
+
+        [Display(Name = "Formato ", Description = "Formato")]
+        [Required(ErrorMessage = "O campo é obrigatório.")]
+        public string formato { get; set; }
 
         [Display(Name = "ISBN ", Description = "ISBN.")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
@@ -49,7 +59,7 @@ namespace Dominios
         public decimal valorUnit { get; set; }
 
         [Display(Name = "Lançamento", Description = "Lançamento")]
-        [Required(ErrorMessage = "O campo é obrigatório.")]
+       // [Required(ErrorMessage = "O campo é obrigatório.")]
         public DateTime dataLanc { get; set; }
     }
 }

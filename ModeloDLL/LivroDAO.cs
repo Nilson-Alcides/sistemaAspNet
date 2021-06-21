@@ -30,10 +30,10 @@ namespace ModeloDLL
             {
                 string strInsert = string.Format("INSERT INTO LIVRO(idLivro,  isbn, titulo, descricao, capaLivro, paginas," +
                     " estoque, valorUnit, dataLanc )" +
-                   " values('{0}','{1}','{2}','{3}', '{4}',{5},{6},'{7}','{8}'); SELECT LAST_INSERT_ID();",
+                   " values('{0}','{1}','{2}','{3}', '{4}',{5},{6},'{7}','{8}','{9}','{10}','{11}','{12}'); SELECT LAST_INSERT_ID();",
                       idLivro, livro.isbn, livro.titulo, livro.descricao, livro.capaLivro, livro.paginas,
                       livro.estoque, Convert.ToDecimal(livro.valorUnit).ToString().Replace(",", "."), 
-                      String.Format("{0:u}", livro.dataLanc));
+                      String.Format("{0:u}", livro.dataLanc), livro.autor, livro.editora, livro.formato,livro.categoria);
                 retorno = db.RetornaDado(strInsert);
 
 
@@ -97,12 +97,12 @@ namespace ModeloDLL
                 strInsert += string.Format("isbn = '{0}',", livro.isbn);
                 strInsert += string.Format("capaLivro = '{0}',", livro.capaLivro);
                 strInsert += string.Format("descricao = '{0}',", livro.descricao);
-                strInsert += string.Format("IdAutor = {0},", Convert.ToInt32( livro.IdAutor));
-                strInsert += string.Format("IdEditora = {0},", Convert.ToInt32(livro.IdEditora));
-                strInsert += string.Format("IdFormato = {0},", Convert.ToInt32(livro.IdFormato));
-                strInsert += string.Format("IdCategoria = {0},", Convert.ToInt32(livro.IdCategoria));
-                strInsert += string.Format("estoque = '{0}',", livro.estoque);
-                strInsert += string.Format("paginas = '{0}',", livro.paginas);
+                strInsert += string.Format("autor = '{0}',", livro.autor);
+                strInsert += string.Format("editora = '{0}',", livro.editora);
+                strInsert += string.Format("formato = '{0}',", livro.formato);
+                strInsert += string.Format("categoria = '{0}',", livro.categoria);
+                strInsert += string.Format("estoque = {0},", livro.estoque);
+                strInsert += string.Format("paginas = {0},", livro.paginas);
                 strInsert += string.Format("dataLanc = '{0:u}',",livro.dataLanc);                
                 strInsert += string.Format("valorUnit = '{0}' ", Convert.ToDecimal(livro.valorUnit).ToString().Replace(",", "."));
                 strInsert += string.Format(" where idLivro = '{0}' ;", livro.idLivro);
