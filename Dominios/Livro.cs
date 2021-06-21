@@ -59,7 +59,8 @@ namespace Dominios
         public decimal valorUnit { get; set; }
 
         [Display(Name = "Lançamento", Description = "Lançamento")]
-       // [Required(ErrorMessage = "O campo é obrigatório.")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Informe a data de Lançamento")]
         public DateTime dataLanc { get; set; }
     }
 }
