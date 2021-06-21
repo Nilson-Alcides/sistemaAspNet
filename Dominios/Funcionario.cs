@@ -65,7 +65,7 @@ namespace Dominios
         public int numero { get; set; }
 
         [Display(Name = "Complemento ", Description = "casa/apto/viela")]
-        [Required(ErrorMessage = "O nome completo é obrigatório.")]
+       // [Required(ErrorMessage = "O nome completo é obrigatório.")]
         //[RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage =
         //           "Números e caracteres especiais não são permitidos no nome.")]
         public string complemento { get; set; }
@@ -77,7 +77,7 @@ namespace Dominios
         public string bairro { get; set; }
 
         [Display(Name = "CEP ", Description = "CEP")]
-        [Range(0, int.MaxValue, ErrorMessage = "Por favor coloque numero valido")]
+        ///[Range(0, int.MaxValue, ErrorMessage = "Por favor coloque numero valido")]
         [Required(ErrorMessage = "O nome completo é obrigatório.")]
         public string CEP { get; set; }
 
@@ -102,15 +102,15 @@ namespace Dominios
         //TELEFONE
         [Display(Name = "Celular")]
         [Required(ErrorMessage = "O numero é obrigatorio")]
-        public int numTel1 { get; set; }
+        public string numTel1 { get; set; }
 
 
         [Display(Name = "Residencial")]
-        public int numTel2 { get; set; }
+        public string numTel2 { get; set; }
 
 
         [Display(Name = "Comercial")]
-        public int numTel3 { get; set; }
+        public string numTel3 { get; set; }
 
 
     }

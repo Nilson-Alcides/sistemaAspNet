@@ -28,10 +28,7 @@ namespace ModeloDLL
                        cliente.nomeCliente, cliente.cpfCliente.Replace(".", string.Empty).Replace("-", string.Empty),
                        cliente.emailCliente, cliente.sexoCliente, String.Format("{0:u}", cliente.dataNascCliente),
                        cliente.statusCliente, cliente.logradouro, cliente.numero, cliente.complemento, cliente.bairro,
-                       cliente.CEP, cliente.cidade, cliente.estado, cliente.UF,
-                       cliente.numTel1,//.Replace("(", string.Empty).Replace(")", string.Empty).Replace("-", string.Empty), 
-                       cliente.numTel2,//.Replace("(", string.Empty).Replace(")", string.Empty).Replace("-", string.Empty), 
-                       cliente.numTel3);//.Replace("(", string.Empty).Replace(")", string.Empty).Replace("-", string.Empty);
+                       cliente.CEP, cliente.cidade, cliente.estado, cliente.UF,cliente.numTel1, cliente.numTel2, cliente.numTel3);
                 retorno = db.RetornaDado(strInsert);
 
                 //string strInsertTel = string.Format("INSERT INTO TELEFONE(idCliente, numTel1, numTel2, numTel3) " +
