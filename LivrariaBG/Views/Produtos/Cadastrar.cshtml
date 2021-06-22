@@ -72,7 +72,8 @@
 }
 <script>
     $(document).ready(function () {
-        $("#preco").inputmask("mask", { "mask": "#.##9,99" }, { reverse: true });
+        //$("#preco").inputmask("mask", { "mask": "#.##9,99" }, { reverse: true });
+        $('#preco').mask('#.##0,00', { reverse: true });
     });
 </script>
 

@@ -32,7 +32,7 @@
                         <i class="fas fa-bars sizebtnh"></i>
                     </button>
                     <img src="~/Imagens/Logo_Livraria.png" width="60" height="40" class="img-responsive">
-                    <a class="navbar-brand " href="#">Livraria BG</a>
+                    <a class="navbar-brand " href="/Home/Index">Livraria BG</a>
                 </div>
                 @*__________________________________________NAV FUNCIONARIOS ________________________________________*@
                 <div class="nav nav-pills">
@@ -40,14 +40,12 @@
                 </div>
                 @*__________________________________________NAV MEUS DADOS________________________________________*@
                 <div class="nav nav-pills">
-                    <a class="nav-link2 sizet" href="/MeusDados/MeusDados"> <i class="fas fa-user-circle sizet"></i> <span>Meus Dados</span></a>
+                    <a class="nav-link2 sizet" href="/MeusDados/MeusDados"> <i class="fas fa-user-circle sizet"></i> <span>Dados da empresa</span></a>
                 </div>
                 @*__________________________________________NAV LOGIN ________________________________________*@
             <div class="nav nav-pills">
-                <a class="nav-link2 sizet" @Html.ActionLink(@Session["usuarioLogado"].ToString(), "Login", "Login/Logout")> <span></span></a>
-                <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair</span></a>
-                
-            </div>  
+                <a class="nav-link2 sizet" @Html.ActionLink(@Session["usuarioLogado"].ToString(), "Login", "Login/Login")> <span></span></a>
+                <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair</span></a>            </div>  
             </div>
         </nav>
     </header>
@@ -76,7 +74,11 @@
                     <div id="vendas" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
 
                         <div class="card-body">
-
+                            <a class="nav-item" href="/Vendas/Pedidos" style="color:black">
+                                <i class="fas fa-shopping-cart"></i> <span>Pedidos</span>
+                            </a>
+                            <br />
+                            <br />
                             <a class="nav-item" href="/Vendas/RealizarVenda" style="color:black">
                                 <i class="fas fa-shopping-cart"></i> <span>Realizar Venda</span>
                             </a>
