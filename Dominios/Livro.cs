@@ -17,10 +17,18 @@ namespace Dominios
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public string editora { get; set; }
 
+        [Key]
+        [Display(Name = "categoria ID ", Description = "categoria.")]
+        public int idEditora { get; set; }
+
         [Display(Name = "Autor ", Description = "Autor.")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public string autor { get; set; }
 
+        [Key]
+        [Display(Name = "categoria ID ", Description = "categoria.")]
+        public int idCategoria { get; set; }
+       
         [Display(Name = "Categoria ", Description = "Categoria.")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public string categoria { get; set; }
