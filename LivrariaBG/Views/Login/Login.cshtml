@@ -29,20 +29,20 @@
         <form action="#">
             @*FALTA AUSTAR OS BOTÔES*@
             <img class="imagem" src="~/Imagens/Logo_Livraria.png" />           
+            <div>
+                <!--@Html.LabelFor(m => m.emailFunc)--> @*Criação do titulo do usuário*@
 
-            <!--@Html.LabelFor(m => m.emailFunc)--> @*Criação do titulo do usuário*@
-
-            @Html.TextBoxFor(m => m.emailFunc, new { placeholder = "Email", @class = "form-input" }) @*Caixa de textto do usuario*@
-            @Html.ValidationMessageFor(m => m.emailFunc, "", new { @class = "text-danger" })
-           
-
-            @Html.PasswordFor(m => m.senhaFunc, new { placeholder = "Senha", @class = "form-input" })
-            @Html.ValidationMessageFor(m => m.senhaFunc, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.emailFunc, new { placeholder = "Email", @class = "form-input" }) @*Caixa de textto do usuario*@
+                @Html.ValidationMessageFor(m => m.emailFunc, "", new { @class = "text-danger" })
 
 
-            <input class="corbtn btn btn-sm" type="submit" name="btnEnviar" value="ENTRAR" role="button" />
-            <a href="#">Esqueci minha senha</a>
-            
+                @Html.PasswordFor(m => m.senhaFunc, new { placeholder = "Senha", @class = "form-input" })
+                @Html.ValidationMessageFor(m => m.senhaFunc, "", new { @class = "text-danger" })
+
+
+                <input class="corbtn btn btn-sm" type="submit" name="btnEnviar" value="ENTRAR" role="button" />
+                <a href="#">Esqueci minha senha</a>
+            </div>
         </form>
     </div>
     </div>

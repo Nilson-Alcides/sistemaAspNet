@@ -120,6 +120,21 @@ namespace ModeloDLL
                 throw new Exception("Erro na aplicação em EXCLUIR Categoria" + ex.Message);
             }
         }
+        public List<Categoria> SelectCategoria()
+        {
 
+            string strQuery = string.Format("SELECT * FROM Categoria");
+            MySqlDataReader myReader = db.RetornaComando(strQuery);
+            var ListCategoria = new List<Categoria>();
+            while (myReader.Read())
+            {
+                var tempCategoria = new Categoria();
+                tempCategoria.idCategoria = int.Parse(myReader["idCategoria"].ToString());
+                tempCategoria.nomeCategoria = myReader["nomeCategoria"].ToString();
+                ListCategoria.Add(tempCategoria);
+            }
+            myReader.Close();
+            return ListCategoria;
+        }
     }
 }

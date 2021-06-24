@@ -44,8 +44,9 @@
                 </div>
                 @*__________________________________________NAV LOGIN ________________________________________*@
             <div class="nav nav-pills">
-                <a class="nav-link2 sizet" @Html.ActionLink(@Session["usuarioLogado"].ToString(), "Login", "Login/Login")> <span></span></a>
-                <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span>Sair</span></a>            </div>  
+                <a class="nav-link2 sizet"><span style="color:#FFFFFF">@Session["usuarioLogado"].ToString()</span></a>&nbsp;&nbsp;
+                <a class="nav-link2 sizet" href="/Login/Login"> <i class="fas fa-power-off sizet"></i> <span> Sair</span></a>
+            </div>  
             </div>
         </nav>
     </header>

@@ -29,11 +29,11 @@ namespace ModeloDLL
             try
             {
                 string strInsert = string.Format("INSERT INTO LIVRO(idLivro,  isbn, titulo, descricao, capaLivro, paginas," +
-                    " estoque, valorUnit, dataLanc,autor, editora,formato,categoria)" +
-                   " values('{0}','{1}','{2}','{3}', '{4}',{5},{6},'{7}','{8}','{9}','{10}','{11}','{12}'); SELECT LAST_INSERT_ID();",
+                    " estoque, valorUnit, dataLanc,autor, editora,formato,categoria, idCategoria)" +
+                   " values('{0}','{1}','{2}','{3}', '{4}',{5},{6},'{7}','{8}','{9}','{10}','{11}','{12}',{13}); SELECT LAST_INSERT_ID();",
                       idLivro, livro.isbn, livro.titulo, livro.descricao, livro.capaLivro, livro.paginas,
                       livro.estoque, Convert.ToDecimal(livro.valorUnit).ToString().Replace(",", "."), 
-                      String.Format("{0:u}", livro.dataLanc), livro.autor, livro.editora, livro.formato,livro.categoria);
+                      String.Format("{0:u}", livro.dataLanc), livro.autor, livro.editora, livro.formato,livro.categoria, livro.idCategoria);
                 retorno = db.RetornaDado(strInsert);
 
 
