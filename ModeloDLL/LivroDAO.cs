@@ -53,7 +53,7 @@ namespace ModeloDLL
         {
             try
             {
-                string strString = "select * From livro ";
+                string strString = "select * From Livro ";
                 return db.RetornaComando(strString);
             }
             catch (MySqlException ex)

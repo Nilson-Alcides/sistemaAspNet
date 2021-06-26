@@ -51,9 +51,8 @@ namespace Dominios
 
         [Display(Name = "Capa ", Description = "Capa")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
-        public string capaLivro { get; set; }
-
-
+        public string capaLivro { get; set; }       
+        
         [Display(Name = "Paginas", Description = "Paginas")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public int paginas { get; set; }
@@ -70,5 +69,7 @@ namespace Dominios
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Informe a data de Lançamento")]
         public DateTime dataLanc { get; set; }
+
+        
     }
 }

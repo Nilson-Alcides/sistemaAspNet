@@ -16,15 +16,15 @@ namespace LivrariaBG.Controllers
         // Cadastro Livro
         public ActionResult Cadastrar()
         {
-            var ObjCategoria = new CategoriaDAO();
-            var ListaCategoria = ObjCategoria.Select();
-            SelectList lista = new SelectList(ListaCategoria, "idCategoria", "nomeCategoria");
-            ViewBag.Lista = lista;
+            //var ObjCategoria = new CategoriaDAO();
+            //var ListaCategoria = ObjCategoria.Select();
+            //SelectList lista = new SelectList(ListaCategoria, "idCategoria", "nomeCategoria");
+            //ViewBag.Lista = lista;
 
-            var ObjEditora = new EditoraDAO();
-            var ListaEditora = ObjEditora.Select();
-            SelectList listaEditora = new SelectList(ListaEditora, "idEditora", "nomeEditora");
-            ViewBag.Lista = listaEditora;
+            //var ObjEditora = new EditoraDAO();
+            //var ListaEditora = ObjEditora.Select();
+            //SelectList listaEditora = new SelectList(ListaEditora, "idEditora", "nomeEditora");
+            //ViewBag.Lista = listaEditora;
 
             return View();
         }
